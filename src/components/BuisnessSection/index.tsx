@@ -147,7 +147,7 @@ export function ImageSection() {
     <div className="grow shrink rounded-3xl min-w-60 w-[342px] max-md:max-w-full">
       <div className="px-9 rounded-3xl max-md:px-5 max-md:max-w-full">
         <img
-          src="https://api.builder.io/api/v1/image/assets/dc7221a2486447debba07878841bf951/b6d08abe60bad948bb4cab402efdf2acb67a7a6d?placeholderIfAbsent=true"
+          src="/earth.gif"
           alt="Global reach and local expertise illustration"
           className="object-contain w-full rounded-3xl aspect-[1.34]"
         />

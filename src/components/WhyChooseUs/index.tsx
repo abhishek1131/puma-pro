@@ -141,11 +141,12 @@ const challengesData = [
     problem:
       "Managing bookings, guest communications, and accounting across multiple fragmented platforms creates inefficiencies and increases errors.",
     solution:
-      "Puma Pro integrates everything into one simple platform, reducing complexity and preventing unnecessary features that clutter your workflow.",
+      "Puma Pro integrates everything into one simple platform, reducing complexity and preventing your workflow.",
     altText: "Home investors choosing designs illustration",
   },
   {
     image: "/whychooseus/third.png",
+    title: "High OTA Fees",
     problem:
       "Operating across fragmented systems limits your ability to manage listings and control expenses effectively.",
     solution:
