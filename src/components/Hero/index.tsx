@@ -70,7 +70,7 @@ export const HeroDescription: React.FC = () => {
   return (
     <div>
       <p
-        className="w-full text-center max-w-[836px]"
+        className="w-full text-center"
         style={{
           fontFamily: "Inter",
           fontWeight: 400,
@@ -86,14 +86,21 @@ export const HeroDescription: React.FC = () => {
         success.
       </p>
       <img
-        src="/home.gif"
-        className="w-full mt-5"
-        style={{ display: "block" }}
+        src="/gif/seventh.gif"
         alt="Hero"
+        className="w-[387px] h-[183px] object-cover mt-5"
+        style={{ display: "block" }}
+      />
+      <img
+        src="/home-bgs.jpg"
+        alt="Hero"
+        className="w-full h-full object-cover mt-5"
+        style={{ display: "block" }}
       />
     </div>
   );
 };
+
 
 export const DemoButton: React.FC = () => {
   return (

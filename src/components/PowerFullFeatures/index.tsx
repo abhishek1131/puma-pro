@@ -18,6 +18,10 @@ interface FeatureCardProps {
   description: string;
   imageUrl: string;
   imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
+  imageTop: number;
+  imageLeft: number;
   layout?: "text-top";
   titleClassName?: string;
   descriptionClassName?: string;
@@ -25,45 +29,43 @@ interface FeatureCardProps {
   containerClassName?: string;
   contentClassName?: string;
   specialContent?: React.ReactNode;
+  isOddRow?: boolean;
 }
 
 export const FeatureCard: React.FC<FeatureCardProps> = ({
-  icon,
   title,
   description,
   imageUrl,
   imageAlt,
-  layout = "text-top",
+  imageWidth,
+  imageHeight,
   titleClassName = "",
   descriptionClassName = "",
   imageClassName = "",
   containerClassName = "",
   contentClassName = "",
   specialContent,
+  isOddRow = false,
 }) => {
   const renderTitle = () => {
     if (title === "Optimized Pricing Automatically") {
       return (
         <h2
-          className={`mb-2 text-2xl font-semibold leading-7 text-gray-800 max-md:text-center max-sm:text-xl max-sm:leading-6 ${titleClassName} transition-all duration-300 hover:translate-x-2 hover:scale-95`}
-          style={{
-            fontFamily: "Inter, sans-serif",
-            fontWeight: 600,
-          }}
+          className={`mb-2 text-2xl font-semibold leading-7 text-gray-800 max-md:text-center max-sm:text-xl max-sm:leading-6 ${titleClassName} transition-all duration-300 ease-in-out group-hover:text-[22px] group-hover:leading-6 max-sm:group-hover:text-[18px] max-sm:group-hover:leading-5`}
+          style={{ fontFamily: "Inter, sans-serif", fontWeight: 600 }}
         >
-          <div className="text-2xl">Optimized Pricing Automatically</div>
-          <div className="text-xs">(Live Soon)</div>
+          <div className="text-2xl max-sm:text-xl group-hover:text-[22px] max-sm:group-hover:text-[18px]">
+            Optimized Pricing Automatically
+          </div>
+          <div className="text-xs group-hover:text-[10px]">(Live Soon)</div>
         </h2>
       );
     }
 
     return (
       <h2
-        className={`mb-2 text-2xl font-semibold leading-7 text-gray-800 max-md:text-center max-sm:text-xl max-sm:leading-6 ${titleClassName} transition-all duration-300 hover:translate-x-2 hover:scale-95`}
-        style={{
-          fontFamily: "Inter, sans-serif",
-          fontWeight: 600,
-        }}
+        className={`mb-2 text-2xl font-semibold leading-7 text-gray-800 max-md:text-center max-sm:text-xl max-sm:leading-6 ${titleClassName} transition-all duration-300 ease-in-out group-hover:text-[22px] group-hover:leading-6 max-sm:group-hover:text-[18px] max-sm:group-hover:leading-5`}
+        style={{ fontFamily: "Inter, sans-serif", fontWeight: 600 }}
       >
         {title}
       </h2>
@@ -72,15 +74,12 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
 
   const renderContent = () => (
     <div
-      className={`flex flex-col items-start w-full max-md:items-center ${contentClassName}`}
+      className={`flex flex-col justify-center w-full max-md:items-center ${contentClassName}`}
     >
       {renderTitle()}
       <p
-        className={`mb-2 text-base leading-6 text-gray-600 max-md:text-center max-sm:text-sm max-sm:leading-5 ${descriptionClassName} transition-all duration-300 hover:translate-x-2 hover:scale-95`}
-        style={{
-          fontFamily: "Inter, sans-serif",
-          fontWeight: 400,
-        }}
+        className={`mb-2 text-base leading-6 text-gray-600 max-md:text-center max-sm:text-sm max-sm:leading-5 ${descriptionClassName} transition-all duration-300 ease-in-out group-hover:text-[14px] group-hover:leading-5 max-sm:group-hover:text-[12px] max-sm:group-hover:leading-4`}
+        style={{ fontFamily: "Inter, sans-serif", fontWeight: 400 }}
       >
         {description}
       </p>
@@ -88,30 +87,46 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   );
 
   const renderImage = () => {
-    if (specialContent) {
-      return specialContent;
-    }
+    if (specialContent) return specialContent;
 
     return (
       <img
         src={imageUrl}
         alt={imageAlt}
-        className={`shrink-0 h-[154px] w-[174px] max-md:mb-4 max-md:h-[100px] max-md:w-[120px] max-sm:h-20 max-sm:w-[100px] ${imageClassName} transition-all duration-300 hover:h-[170px] hover:w-[190px] max-md:hover:h-[110px] max-md:hover:w-[130px] max-sm:hover:h-24 max-sm:hover:w-[110px]`}
+        className={`shrink-0 max-md:mb-4 max-md:static ${imageClassName} transition-all duration-300 ease-in-out group-hover:scale-105`}
+        style={{
+          width: `${imageWidth}px`,
+          height: `${imageHeight}px`,
+        }}
       />
     );
   };
 
   return (
-    <article className={`box-border flex flex-col shrink-0 gap-2 justify-center items-start p-2.5 bg-white rounded-2xl shadow-md h-[216px] w-[640px] max-md:w-full max-md:max-w-screen-sm max-md:h-auto max-md:min-h-[200px] max-sm:p-4 transition-all duration-300 hover:shadow-2xl hover:border-teal-500 hover:border-solid ${containerClassName}`}>
+    <article
+      className={`box-border flex flex-col shrink-0 gap-16 justify-center items-center p-2.5 bg-white rounded-2xl shadow-md h-[256px] w-[660px] transition-all duration-300 ease-in-out group hover:shadow-2xl hover:border-teal-500 hover:border-solid ${containerClassName}`}
+    >
       <div className="flex items-center w-full max-md:flex-col max-md:text-center">
-        {renderImage()}
-        <div className="flex flex-col flex-1 gap-2 items-start pl-4 max-md:items-center max-md:pl-0">
-          {renderContent()}
-        </div>
+        {isOddRow ? (
+          <>
+            <div className="flex flex-col flex-1 gap-2 justify-center items-start pl-4 max-md:items-center max-md:pl-0">
+              {renderContent()}
+            </div>
+            {renderImage()}
+          </>
+        ) : (
+          <>
+            {renderImage()}
+            <div className="flex flex-col flex-1 gap-2 justify-center items-start pl-4 max-md:items-center max-md:pl-0">
+              {renderContent()}
+            </div>
+          </>
+        )}
       </div>
     </article>
   );
 };
+
 
 export const MarketingCard: React.FC = () => {
   return (
@@ -121,7 +136,7 @@ export const MarketingCard: React.FC = () => {
           <div
             dangerouslySetInnerHTML={{
               __html:
-                '<svg id="I6:3236;857:3765;704:2342" width="110" height="111" viewBox="0 0 110 111" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="chart-svg" style="width: 110px; height: 110px; position: absolute; left: 0; top: 0"> <g clip-path="url(#clip0_6_3469)"> <path d="M26.459 0.548828V108.142" stroke="url(#paint0_linear_6_3469)" stroke-opacity="0.1" stroke-width="0.92449"></path> <path d="M52.8083 0.548828V108.142" stroke="url(#paint1_linear_6_3469)" stroke-opacity="0.1" stroke-width="0.92449"></path> <path d="M0 26.8745H31.7228" stroke="url(#paint2_linear_6_3469)" stroke-opacity="0.1" stroke-width="0.92449"></path> <path d="M0 79.4868H107.593" stroke="url(#paint3_linear_6_3469)" stroke-opacity="0.1" stroke-width="0.92449"></path> <path d="M0 53.1377H107.593" stroke="url(#paint4_linear_6_3469)" stroke-opacity="0.1" stroke-width="0.92449"></path> <path d="M79.1577 0.548828V108.142" stroke="url(#paint5_linear_6_3469)" stroke-opacity="0.1" stroke-width="0.92449"></path> <path d="M58.5976 38.8896H58.5976C49.6028 38.8896 42.311 46.1814 42.311 55.1762V55.1762C42.311 64.171 49.6028 71.4627 58.5976 71.4627H58.5976C67.5924 71.4627 74.8841 64.171 74.8841 55.1762V55.1762C74.8841 46.1814 67.5924 38.8896 58.5976 38.8896Z" fill="black" fill-opacity="0.08"></path> <g filter="url(#filter0_d_6_3469)"> <path d="M42.2985 54.4639C42.5465 55.1341 43.0749 55.6624 43.7449 55.9103C43.0749 56.1583 42.5465 56.6867 42.2985 57.3568C42.0505 56.6867 41.5223 56.1583 40.8521 55.9103C41.5223 55.6624 42.0505 55.1341 42.2985 54.4639Z" fill="#0075C3"></path> </g> <mask id="mask0_6_3469" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="45" y="41" width="27" height="28"> <path d="M71.9661 41.876H45.3647V68.4773H71.9661V41.876Z" fill="white"></path> </mask> <g mask="url(#mask0_6_3469)"> <path d="M79.804 34.0381H37.7644V76.0777H79.804V34.0381Z" fill="url(#pattern0_6_3469)"></path> </g> <mask id="mask1_6_3469" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="42" y="39" width="12" height="17"> <path d="M53.9207 39.7017C50.6089 40.6866 47.696 42.6995 45.6035 45.449C43.5108 48.1986 42.347 51.5426 42.2803 54.9972L42.5 55.0015C42.5658 51.5934 43.7139 48.2946 45.7783 45.5822C47.8426 42.8696 50.716 40.884 53.9834 39.9123L53.9207 39.7017Z" fill="white"></path> </mask> <g mask="url(#mask1_6_3469)"> <path d="M53.9207 39.7017C50.6089 40.6866 47.696 42.6995 45.6035 45.449C43.5108 48.1986 42.347 51.5426 42.2803 54.9972L42.5 55.0015C42.5658 51.5934 43.7139 48.2946 45.7783 45.5822C47.8426 42.8696 50.716 40.884 53.9834 39.9123L53.9207 39.7017Z" stroke="url(#paint6_linear_6_3469)" stroke-width="2"></path> </g> </g> <defs> <filter id="filter0_d_6_3469" x="35.7769" y="49.3887" width="13.0432" height="13.0435" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix> <feOffset></feOffset> <feGaussianBlur stdDeviation="2.5376"></feGaussianBlur> <feComposite in2="hardAlpha" operator="out"></feComposite> <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.75 0"></feColorMatrix> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6_3469"></feBlend> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6_3469" result="shape"></feBlend> </filter> <pattern id="pattern0_6_3469" patternContentUnits="objectBoundingBox" width="1" height="1"> <use xlink:href="#image0_6_3469" transform="translate(0 -0.00025) scale(0.0005)"></use> </pattern> <linearGradient id="paint0_linear_6_3469" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"></stop> <stop offset="0.498481" stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint1_linear_6_3469" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"></stop> <stop offset="0.498481" stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint2_linear_6_3469" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"></stop> <stop offset="0.498481" stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint3_linear_6_3469" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"></stop> <stop offset="0.498481" stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint4_linear_6_3469" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"></stop> <stop offset="0.498481" stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint5_linear_6_3469" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"></stop> <stop offset="0.498481" stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint6_linear_6_3469" x1="44.296" y1="55.4143" x2="55.1028" y2="40.451" gradientUnits="userSpaceOnUse"> <stop stop-color="#0075C3"></stop> <stop offset="1" stop-color="#0075C3" stop-opacity="0"></stop> </linearGradient> <clipPath id="clip0_6_3469"> <rect width="109.73" height="109.73" fill="white" transform="translate(0 0.548828)"></rect> </clipPath> </defs> </svg>',
+                '<svg id="I6:3236;857:3765;704:2342" width="110" height="111" viewBox="0 0 110 111" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="chart-svg" style="width: 110px; height: 110px; position: absolute; left: 0; top: 0"> <g clip-path="url(#clip0_6_3469)"> <path d="M26.459 0.548828V108.142" stroke="url(#paint0_linear_6_3469)" stroke-opacity="0.1" stroke-width="0.92449"></path> <path d="M52.8083 0.548828V108.142" stroke="url(#paint1_linear_6_3469)" stroke-opacity="0.1" stroke-width="0.92449"></path> <path d="M0 26.8745H31.7228" stroke="url(#paint2_linear_6_3469)" stroke-opacity="0.1" stroke-width="0.92449"></path> <path d="M0 79.4868H107.593" stroke="url(#paint3_linear_6_3469)" stroke-opacity="0.1" stroke-width="0.92449"></path> <path d="M0 53.1377H107.593" stroke="url(#paint4_linear_6_3469)" stroke-opacity="0.1" stroke-width="0.92449"></path> <path d="M79.1577 0.548828V108.142" stroke="url(#paint5_linear_6_3469)" stroke-opacity="0.1" stroke-width="0.92449"></path> <path d="M58.5976 38.8896H58.5976C49.6028 38.8896 42.311 46.1814 42.311 55.1762V55.1762C42.311 64.171 49.6028 71.4627 58.5976 71.4627H58.5976C67.5924 71.4627 74.8841 64.171 74.8841 55.1762V55.1762C74.8841 46.1814 67.5924 38.8896 58.5976 38.8896Z" fill="black" fill-opacity="0.08"></path> <g filter="url(#filter0_d_6_3469)"> <path d="M42.2985 54.petition6C42.5465 55.1341 43.0749 55.6624 43.7449 55.9103C43.0749 56.1583 42.5465 56.6867 42.2985 57.3568C42.0505 56.6867 41.5223 56.1583 40.8521 55.9103C41.5223 55.6624 42.0505 55.1341 42.2985 54.4639Z" fill="#0075C3"></path> </g> <mask id="mask0_6_3469" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="45" y="41" width="27" height="28"> <path d="M71.9661 41.876H45.3647V68.4773H71.9661V41.876Z" fill="white"></path> </mask> <g mask="url(#mask0_6_3469)"> <path d="M79.804 34.0381H37.7644V76.0777H79.804V34.0381Z" fill="url(#pattern0_6_3469)"></path> </g> <mask id="mask1_6_3469" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="42" y="39" width="12" height="17"> <path d="M53.9207 39.7017C50.6089 40.6866 47.696 42.6995 45.6035 45.449C43.5108 48.1986 42.347 51.5426 42.2803 54.9972L42.5 55.0015C42.5658 51.5934 43.7139 48.2946 45.7783 45.5822C47.8426 42.8696 50.716 40.884 53.9834 39.9123L53.9207 39.7017Z" fill="white"></path> </mask> <g mask="url(#mask1_6_3469)"> <path d="M53.9207 39.7017C50.6089 40.6866 47.696 42.6995 45.6035 45.449C43.5108 48.1986 42.347 51.5426 42.2803 54.9972L42.5 55.0015C42.5658 51.5934 43.7139 48.2946 45.7783 45.5822C47.8426 42.8696 50.716 40.884 53.9834 39.9123L53.9207 39.7017Z" stroke="url(#paint6_linear_6_3469)" stroke-width="2"></path> </g> </g> <defs> <filter id="filter0_d_6_3469" x="35.7769" y="49.3887" width="13.0432" height="13.0435" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix> <feOffset></feOffset> <feGaussianBlur stdDeviation="2.5376"></feGaussianBlur> <feComposite in2="hardAlpha" operator="out"></feComposite> <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.75 0"></feColorMatrix> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6_3469"></feBlend> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6_3469" result="shape"></feBlend> </filter> <pattern id="pattern0_6_3469" patternContentUnits="objectBoundingBox" width="1" height="1"> <use xlink:href="#image0_6_3469" transform="translate(0 -0.00025) scale(0.0005)"></use> </pattern> <linearGradient id="paint0_linear_6_3469" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"></stop> <stop offset="0.498481" stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint1_linear_6_3469" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"></stop> <stop offset="0.498481" stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint2_linear_6_3469" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"></stop> <stop offset="0.498481" stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint3_linear_6_3469" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"></stop> <stop offset="0.498481" stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint4_linear_6_3469" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"></stop> <stop offset="0.498481" stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint5_linear_6_3469" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"></stop> <stop offset="0.498481" stop-color="white"></stop> <stop offset="1" stop-color="white" stop-opacity="0"></stop> </linearGradient> <linearGradient id="paint6_linear_6_3469" x1="44.296" y1="55.4143" x2="55.1028" y2="40.451" gradientUnits="userSpaceOnUse"> <stop stop-color="#0075C3"></stop> <stop offset="1" stop-color="#0075C3" stop-opacity="0"></stop> </linearGradient> <clipPath id="clip0_6_3469"> <rect width="109.73" height="109.73" fill="white" transform="translate(0 0.548828)"></rect> </clipPath> </defs> </svg>',
             }}
           />
         </div>
@@ -159,70 +174,101 @@ export const FeaturesGrid: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-8 gap-y-8 max-w-[1334px] w-full mx-auto max-md:grid-cols-1 max-md:gap-4">
-            {/* Card 1: Integrated Payment Processor */}
+          <div className="grid grid-cols-2 gap-x-24 gap-y-8 max-w-[1334px] w-full  max-md:grid-cols-1 max-md:gap-8">
+            {/* Row 1: Text First */}
             <FeatureCard
               title="Integrated Payment Processor"
               description="Puma Pro Pay automates all your bookings and payments—no manual work, no bank fees, no errors. Enjoy seamless, effortless transactions every time."
-              imageUrl="/gifs/first.gif"
+              imageUrl="/gif/first.gif"
               imageAlt="Animation1"
+              imageWidth={237}
+              imageHeight={240}
+              imageTop={11}
+              imageLeft={394}
+              isOddRow={true}
             />
-
-            {/* Card 2: Steve AI Assistant */}
             <FeatureCard
               title="Steve Ai Assistant"
               description="AI assistant your intuitive AI assistant that works 24/7 to save you time. From checking the weekend weather forecast to finding local events that could affect your room rates, Steve has it covered. Need to know how many cleans are scheduled this week? Just ask."
-              imageUrl="/gifs/second.gif"
+              imageUrl="/gif/second.gif"
               imageAlt="Animation4"
+              imageWidth={255.51531982421875}
+              imageHeight={223.2474365234375}
+              imageTop={39}
+              imageLeft={404}
+              isOddRow={true}
             />
 
-            {/* Card 3: Optimized Pricing */}
+            {/* Row 2: Image First */}
             <FeatureCard
               title="Optimized Pricing Automatically"
               description="Automatically adjust your rates in real time based on demand, events, and market trends—all from one platform."
-              imageUrl="/gifs/third.gif"
+              imageUrl="/gif/third.gif"
               imageAlt="Animation2"
+              imageWidth={355}
+              imageHeight={196}
+              imageTop={33}
+              imageLeft={50}
+              isOddRow={false}
             />
-
-            {/* Card 4: Channel Manager */}
             <FeatureCard
               title="Channel Manager"
               description="Manage all your booking platforms from one place with Puma Pro. Our Channel Manager keeps your listings, rates, and availability perfectly synced automatically."
-              imageUrl="/gifs/fourth.gif"
+              imageUrl="/gif/fourth.gif"
               imageAlt="Animation7"
+              imageWidth={293.67022705078125}
+              imageHeight={140}
+              imageTop={56}
+              imageLeft={45}
+              isOddRow={false}
             />
 
-            {/* Card 5: Reporting & Analytics */}
+            {/* Row 3: Text First */}
             <FeatureCard
               title="Reporting & Analytics"
               description="Puma Pro instantly generates all the reports you need bookings, payments, performance, and more automatically. Stay on top of your business with accurate, up-to-date insights."
-              imageUrl="/gifs/fourth.gif"
+              imageUrl="/gif/fifth.gif"
               imageAlt="Animation8"
+              imageWidth={300}
+              imageHeight={161}
+              imageTop={51}
+              imageLeft={358}
+              isOddRow={true}
             />
-
-            {/* Card 6: Unified Guest Messaging System */}
             <FeatureCard
               title="Unified Guest Messaging System"
               description="Easily communicate with guests from one place. Puma Pro automates confirmations, updates, and even sends marketing promotions no manual emails or extra effort needed."
-              imageUrl="/gifs/fifth.gif"
+              imageUrl="/gif/sixth.gif"
               imageAlt="Animation5"
+              imageWidth={196}
+              imageHeight={222}
+              imageTop={27}
+              imageLeft={385.5}
+              isOddRow={true}
             />
 
-            {/* Card 7: Automated Bookings System */}
+            {/* Row 4: Image First */}
             <FeatureCard
               title="Automated Bookings System"
-              description="Let Puma Pro handle your reservations for you. Our automated booking system instantly processes new bookings, updates your calendar, and sends confirmations no manual entry or double bookings."
-              imageUrl="/gifs/seventh.gif"
+              description="Let Puma Pro handle your reservations for you. Our automated booking system instantly processes new bookings, no manual entry or double bookings."
+              imageUrl="/gif/seventh.gif"
               imageAlt="Group 1000004942 (5) 1"
+              imageWidth={376}
+              imageHeight={184}
+              imageTop={38}
+              imageLeft={59}
+              isOddRow={false}
             />
-
-            {/* Card 8: Marketing */}
             <FeatureCard
               title="Marketing"
               description="Need a hand with your marketing? Whether it's building a new website or sending out promotional emails, we're here to help you get noticed and grow your business hassle-free."
-              imageUrl="/gifs/marketing.gif"
+              imageUrl="/gif/eight.gif"
               imageAlt=""
-              specialContent={<MarketingCard />}
+              imageWidth={282.7349548339844}
+              imageHeight={114.82846069335938}
+              imageTop={74}
+              imageLeft={59}
+              isOddRow={false}
             />
           </div>
         </div>
