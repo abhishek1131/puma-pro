@@ -199,18 +199,21 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
 }) => {
   return (
-    <article className="group relative h-[184.5px] w-[353px] max-md:w-80 max-sm:w-[320px]">
-      <div className="flex absolute left-0 flex-col shrink-0 gap-4 justify-end items-center px-3 pt-3 pb-5 rounded-xl border-2 border-solid backdrop-blur-[20px] bg-white bg-opacity-80 border-sky-600 border-opacity-30 h-[148px] top-[37px] w-[353px] max-md:w-80 max-sm:w-[280px]">
-        <div className="flex relative flex-col gap-1 items-center self-stretch">
-          <h2 className="self-stretch text-lg font-bold leading-6 text-center text-neutral-700 max-sm:text-base max-sm:leading-6">
+    <article className="group relative h-[184.5px] w-[353px] max-md:w-80 max-sm:w-[320px] transition-transform duration-300 hover:scale-105">
+      {/* Card */}
+      <div className="flex absolute left-0 top-[37px] h-[148px] w-[353px] max-md:w-80 max-sm:w-[280px] flex-col gap-4 justify-end items-center px-3 pt-3 pb-5 rounded-xl border-2 border-solid border-sky-600 border-opacity-30 backdrop-blur-[20px] bg-white bg-opacity-80 transition-all duration-300 group-hover:bg-[linear-gradient(138.49deg,rgba(0,216,178,0.15)_5.39%,rgba(0,117,195,0.15)_100%)]">
+        <div className="flex flex-col gap-1 items-center self-stretch">
+          <h2 className="text-lg font-bold leading-6 text-center text-neutral-700 max-sm:text-base">
             {title}
           </h2>
-          <p className="text-base leading-5 text-center text-neutral-700 max-md:w-[300px] max-sm:text-sm max-sm:leading-4 max-sm:w-[260px]">
+          <p className="text-base leading-5 text-center text-neutral-700 max-md:w-[300px] max-sm:text-sm max-sm:w-[260px]">
             {description}
           </p>
         </div>
       </div>
-      <div className="flex absolute top-0 shrink-0 gap-2.5 justify-center items-center p-2.5 bg-white rounded-2xl shadow-lg h-[74px] left-[140px] w-[74px] max-md:left-[123px] max-sm:left-[103px] group-hover:bg-teal-500 transition-colors duration-200">
+
+      {/* Icon */}
+      <div className="flex absolute top-0 left-[140px] max-md:left-[123px] max-sm:left-[103px] h-[74px] w-[74px] justify-center items-center p-2.5 bg-white rounded-2xl shadow-lg border-2 border-sky-600 border-opacity-30 transition-all duration-300 group-hover:bg-[linear-gradient(138.49deg,#00D8B2_5.39%,#0075C3_100%)] group-hover:border-[#00D8B2] group-hover:scale-110">
         <FeatureIcon type={iconType} />
       </div>
     </article>

@@ -86,8 +86,10 @@ export const HeroDescription: React.FC = () => {
         success.
       </p>
       <img
-        src="/homepage.png"
-        style={{ width: "1440px", marginTop: "20px" }}
+        src="/home.gif"
+        className="w-full mt-5"
+        style={{ display: "block" }}
+        alt="Hero"
       />
     </div>
   );
