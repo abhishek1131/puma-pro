@@ -80,14 +80,9 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   const renderImage = () => {
     if (specialContent) return specialContent;
 
-    // Derive static image URL
-    const staticImageUrl = imageUrl.replace('/gif/', '/images/').replace('.gif', '.png');
-
-    // Log URLs for debugging
-    console.log(`FeatureCard: ${title}`);
-    console.log(`Hovered: ${isHovered}`);
-    console.log(`Dynamic Image URL: ${imageUrl}`);
-    console.log(`Static Image URL: ${staticImageUrl}`);
+    const staticImageUrl = imageUrl
+      .replace("/gif/", "/images/")
+      .replace(".gif", ".png");
 
     return (
       <img
@@ -99,8 +94,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
           height: `${imageHeight}px`,
         }}
         onError={(e) => {
-          console.error(`Failed to load image: ${isHovered ? imageUrl : staticImageUrl}`);
-          e.currentTarget.src = imageUrl; // Fallback to dynamic image if static fails
+          e.currentTarget.src = imageUrl;
         }}
       />
     );
@@ -108,37 +102,46 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
 
   return (
     <article
-      className={`box-border flex flex-col shrink-0 gap-16 justify-center items-center p-2.5 bg-white rounded-2xl shadow-md h-[256px] w-[660px] transition-all duration-300 ease-in-out group hover:shadow-2xl hover:border-teal-500 hover:border-solid ${containerClassName}`}
-      onMouseEnter={() => {
-        console.log(`Hover started: ${title}`);
-        setIsHovered(true);
-      }}
-      onMouseLeave={() => {
-        console.log(`Hover ended: ${title}`);
-        setIsHovered(false);
-      }}
-    >
-      <div className="flex items-center w-full max-md:flex-col max-md:text-center">
-        {isOddRow ? (
-          <>
-            <div className="flex flex-col flex-1 gap-2 justify-center items-start pl-4 max-md:items-center max-md:pl-0">
-              {renderContent()}
-            </div>
-            {renderImage()}
-          </>
-        ) : (
-          <>
-            {renderImage()}
-            <div className="flex flex-col flex-1 gap-2 justify-center items-start pl-4 max-md:items-center max-md:pl-0">
-              {renderContent()}
-            </div>
-          </>
-        )}
-      </div>
-    </article>
+    className={`
+      group relative box-border flex flex-col shrink-0 gap-16 justify-center items-center p-2.5
+      bg-white rounded-2xl h-[256px] w-[660px] transition-all duration-300 ease-in-out
+      hover:shadow-[0_0_25px_rgba(0,216,178,0.08),0_0_40px_rgba(0,117,195,0.08)]
+      shadow-md
+      before:content-[''] before:absolute before:inset-0 before:rounded-2xl
+      before:border-[4px] before:border-transparent
+      before:[border-image-source:linear-gradient(90deg,#00D8B2,#00D8B2)]
+      before:[border-image-slice:1]
+      before:opacity-0 group-hover:before:opacity-100
+      before:transition-opacity before:duration-300
+      before:pointer-events-none before:z-[1]
+      ${containerClassName}
+    `}
+    onMouseEnter={() => setIsHovered(true)}
+    onMouseLeave={() => setIsHovered(false)}
+  >
+    <div className="relative z-[2] flex items-center w-full max-md:flex-col max-md:text-center">
+      {isOddRow ? (
+        <>
+          <div className="flex flex-col flex-1 gap-2 justify-center items-start pl-4 max-md:items-center max-md:pl-0">
+            {renderContent()}
+          </div>
+          {renderImage()}
+        </>
+      ) : (
+        <>
+          {renderImage()}
+          <div className="flex flex-col flex-1 gap-2 justify-center items-start pl-4 max-md:items-center max-md:pl-0">
+            {renderContent()}
+          </div>
+        </>
+      )}
+    </div>
+  </article>
+  
+  
+  
   );
 };
-
 export const FeaturesGrid: React.FC = () => {
   return (
     <>

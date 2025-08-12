@@ -93,8 +93,26 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
 }) => {
   return (
-    <article className="group flex flex-col gap-2.5 justify-center items-center p-10 rounded-lg border border-solid backdrop-blur-[21px] border-sky-400 border-opacity-0 shadow-sm group-hover:shadow-lg group-hover:border-l-0 group-hover:border-r-0 h-[177px] w-[563px] max-md:p-8 max-md:w-full max-md:h-auto max-md:max-w-[500px] max-sm:p-6 max-sm:h-auto transition-all duration-300">
-      <div className="group-hover:text-teal-500 transition-colors duration-300">{icon}</div>
+    <article
+      className="
+        group flex flex-col gap-2.5 justify-center items-center 
+        p-10 rounded-lg border border-solid backdrop-blur-[21px] 
+        border-sky-400 border-opacity-30 bg-white bg-opacity-80
+        shadow-sm h-[177px] w-[563px]
+        max-md:p-8 max-md:w-full max-md:h-auto max-md:max-w-[500px] 
+        max-sm:p-6 max-sm:h-auto 
+        transition-all duration-300
+
+        hover:shadow-xl hover:border-l-0 hover:border-r-0
+        bg-[linear-gradient(138.49deg,rgba(0,216,178,0.075)_5.39%,rgba(0,117,195,0.075)_100%)]
+      "
+    >
+      {/* Icon */}
+      <div className="group-hover:text-teal-500 transition-colors duration-300">
+        {icon}
+      </div>
+
+      {/* Title + Description */}
       <div className="flex flex-col shrink-0 gap-1 items-center w-full h-[77px]">
         <header className="flex flex-col items-center w-full">
           <h3 className="w-full text-2xl font-bold leading-9 text-center text-sky-600 max-sm:text-xl max-sm:leading-7">
@@ -110,6 +128,8 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
     </article>
   );
 };
+
+
 
 const QuickSetupIcon = () => (
   <svg

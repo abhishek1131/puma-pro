@@ -211,7 +211,7 @@ const FeatureCard = ({ img, hoveredImg, title, description }) => {
       </div>
 
       {/* Icon */}
-      <div className="flex absolute top-0 left-[140px] max-md:left-[123px] max-sm:left-[103px] h-[74px] w-[74px] justify-center items-center p-2.5 bg-white rounded-2xl shadow-lg border-2 border-sky-600 border-opacity-30 transition-all duration-300 group-hover:bg-[linear-gradient(138.49deg,#00D8B2_5.39%,#0075C3_100%)] group-hover:border-[#00D8B2] group-hover:scale-110">
+      <div className="flex absolute top-0 left-[140px] max-md:left-[123px] max-sm:left-[103px] h-[74px] w-[74px] justify-center items-center p-2.5 bg-white rounded-2xl shadow-lg  transition-all duration-300 group-hover:bg-[linear-gradient(138.49deg,#00D8B2_5.39%,#0075C3_100%)] group-hover:border-[#00D8B2] group-hover:scale-110">
         <img 
           src={img} 
           alt={title} 
@@ -387,16 +387,28 @@ interface WhyChooseSectionProps {
 const WhyChooseSection = ({ className = "" }) => {
   return (
     <section
-      className={`flex relative gap-3 justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[50px] w-[225px] max-md:pt-2 max-md:pr-7 max-md:pb-2.5 max-md:pl-7 max-md:h-[50px] max-md:w-[200px] max-sm:pt-2 max-sm:pr-6 max-sm:pb-2 max-sm:pl-7 max-sm:h-[45px] max-sm:w-[180px] ${className}`}
+      className={`group relative flex gap-3 justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[50px] w-[225px] max-md:pt-2 max-md:pr-7 max-md:pb-2.5 max-md:pl-7 max-md:h-[50px] max-md:w-[200px] max-sm:pt-2 max-sm:pr-6 max-sm:pb-2 max-sm:pl-7 max-sm:h-[45px] max-sm:w-[180px] transition-all duration-300 ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden ${className}`}
     >
-      <div className="flex relative flex-col shrink-0 items-start w-[103px] max-md:w-[90px] max-sm:w-20">
-        <h2 className="relative self-stretch text-base font-bold leading-5 text-white max-md:text-sm max-md:leading-5 max-sm:text-sm max-sm:leading-4">
+      {/* Text Section */}
+      <div className="flex relative flex-col shrink-0 items-start w-[103px] max-md:w-[90px] max-sm:w-20 transition-all duration-300 ease-[ease] group-hover:-translate-x-[20px]">
+        <h2 className="relative self-stretch text-base font-bold leading-5 text-white max-md:text-sm max-md:leading-5 max-sm:text-sm max-sm:leading-4 ">
           Why Choose
         </h2>
-        <h3 className="relative self-stretch text-xl font-bold leading-6 text-white max-md:text-lg max-md:leading-6 max-sm:text-base max-sm:leading-5">
+        <h3 className="relative self-stretch text-xl font-bold leading-6 text-white max-md:text-lg max-md:leading-6 max-sm:text-base max-sm:leading-5 ">
           PumaPro?
         </h3>
       </div>
+
+      {/* Arrow */}
+      <span className="absolute right-[20px] translate-x-[40px] opacity-0 transition-all duration-300 ease-[ease] group-hover:translate-x-0 group-hover:opacity-100">
+        <Image
+          src="/arrow.svg"
+          alt="Arrow"
+          width={24}
+          height={24}
+          className="w-6 h-6"
+        />
+      </span>
     </section>
   );
 };
