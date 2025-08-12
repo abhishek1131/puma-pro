@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface FeatureIconProps {
   type:
     | "integration"
@@ -193,11 +195,7 @@ interface FeatureCardProps {
   description: string;
 }
 
-export const FeatureCard: React.FC<FeatureCardProps> = ({
-  iconType,
-  title,
-  description,
-}) => {
+const FeatureCard = ({ img, hoveredImg, title, description }) => {
   return (
     <article className="group relative h-[184.5px] w-[353px] max-md:w-80 max-sm:w-[320px] transition-transform duration-300 hover:scale-105">
       {/* Card */}
@@ -214,56 +212,74 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
 
       {/* Icon */}
       <div className="flex absolute top-0 left-[140px] max-md:left-[123px] max-sm:left-[103px] h-[74px] w-[74px] justify-center items-center p-2.5 bg-white rounded-2xl shadow-lg border-2 border-sky-600 border-opacity-30 transition-all duration-300 group-hover:bg-[linear-gradient(138.49deg,#00D8B2_5.39%,#0075C3_100%)] group-hover:border-[#00D8B2] group-hover:scale-110">
-        <FeatureIcon type={iconType} />
+        <img 
+          src={img} 
+          alt={title} 
+          className="w-[54px] h-[55px] group-hover:hidden"
+        />
+        <img 
+          src={hoveredImg} 
+          alt={`${title} hovered`} 
+          className="w-[54px] h-[55px] hidden group-hover:block"
+        />
       </div>
     </article>
   );
 };
 
-export const FeatureCards: React.FC = () => {
+const FeatureCards = () => {
   const features = [
     {
-      iconType: "fees" as const,
+      img: "/svgs/first.svg",
+      hoveredImg: "/hovered/first.svg",
       title: "No direct fees",
       description:
         "You decide pass our fee to guests, keep more of your earnings",
     },
     {
-      iconType: "partnership" as const,
+      img: "/svgs/second.svg",
+      hoveredImg: "/hovered/second.svg",
       title: "True Partnership",
       description:
         "We only succeed when you do our interests are aligned with your growth.",
     },
     {
-      iconType: "automation" as const,
+      img: "/svgs/third.svg",
+      hoveredImg: "/hovered/third.svg",
       title: "Seamless Automation",
       description:
         "Save hours each week with automated bookings, payments and reporting.",
     },
     {
-      iconType: "integration" as const,
+      img: "/svgs/fourth.svg",
+      hoveredImg: "/hovered/fourth.svg",
       title: "Integrated with Leading OTAs",
       description:
         "Connect instantly to Airbnb, Booking.com, Expedia, Agoda and 100's more connections.",
     },
     {
-      iconType: "security" as const,
+      img: "/svgs/fifth.svg",
+      hoveredImg: "/hovered/fifth.svg",
       title: "Secure & Transparent",
       description:
         "Bank level security and real time visibility with PCI and DSS compliance",
     },
     {
-      iconType: "scaling" as const,
+      img: "/svgs/sixth.svg",
+      hoveredImg: "/hovered/sixth.svg",
       title: "Effortless Scaling",
       description:
         "Manage anywhere from 1 to 2,000 properties no performance drop.",
     },
     {
-      iconType: "support" as const,
+      img: "/svgs/seventh.svg",
+      hoveredImg: "/hovered/seventh.svg",
       title: "24/7 Customer Support",
-      description: "Real people, Real help whenever you need it",
+      description:
+        "Real people, Real help whenever you need it",
     },
   ];
+  
 
   return (
     <>
@@ -275,7 +291,8 @@ export const FeatureCards: React.FC = () => {
         {features.map((feature, index) => (
           <FeatureCard
             key={index}
-            iconType={feature.iconType}
+            img={feature.img}
+            hoveredImg={feature.hoveredImg}
             title={feature.title}
             description={feature.description}
           />
@@ -367,7 +384,7 @@ interface WhyChooseSectionProps {
   className?: string;
 }
 
-function WhyChooseSection({ className = "" }: WhyChooseSectionProps) {
+const WhyChooseSection = ({ className = "" }) => {
   return (
     <section
       className={`flex relative gap-3 justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[50px] w-[225px] max-md:pt-2 max-md:pr-7 max-md:pb-2.5 max-md:pl-7 max-md:h-[50px] max-md:w-[200px] max-sm:pt-2 max-sm:pr-6 max-sm:pb-2 max-sm:pl-7 max-sm:h-[45px] max-sm:w-[180px] ${className}`}
@@ -382,9 +399,9 @@ function WhyChooseSection({ className = "" }: WhyChooseSectionProps) {
       </div>
     </section>
   );
-}
+};
 
-export default function Features() {
+ const Features = () => {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-[#EBEFF2] py-10 px-4">
       <div className="flex flex-col items-center gap-10 w-full max-w-6xl">
@@ -396,47 +413,31 @@ export default function Features() {
           success as you are.
         </p>
         <div className="flex flex-col items-center gap-8 w-full">
-          {/* <FeaturesSection /> */}
           <FeatureCards />
         </div>
-        <>
-          <div className="flex flex-col items-center h-14 w-[249px] max-sm:w-full">
-            <button className="group flex shrink-0 gap-3 justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[100px] w-[210px] max-sm:w-full max-sm:max-w-[300px] transition-all duration-[0.3s] ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden">
-              <div className="relative transition-all duration-[0.3s] ease-[ease] group-hover:absolute group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:scale-110">
-                <svg
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 flex-shrink-0 group-hover:fill-[#00D8B2] transition-[fill] duration-[0.3s]"
-                >
-                  <g clipPath="url(#clip0_6_3357)">
-                    <path
-                      d="M20.8109 9.81848L6.63593 1.08075C5.6104 0.449388 4.37051 0.423138 3.31915 1.01053C2.26779 1.59783 1.64014 2.66756 1.64014 3.87182V21.2677C1.64014 23.0886 3.10732 24.578 4.91061 24.5878L4.92528 24.5879C5.48881 24.5878 6.07606 24.4112 6.62454 24.0765C7.06578 23.8073 7.20523 23.2314 6.93603 22.7902C6.66682 22.3489 6.09082 22.2095 5.64973 22.4787C5.39318 22.6352 5.14264 22.7161 4.92068 22.7161C4.24029 22.7124 3.51181 22.1295 3.51181 21.2677V3.87187C3.51181 3.35526 3.78106 2.8965 4.232 2.64454C4.68298 2.39259 5.21478 2.40384 5.65414 2.67436L19.8292 11.4121C20.2552 11.6744 20.499 12.1118 20.498 12.6121C20.497 13.1124 20.2514 13.5488 19.823 13.8103L9.57439 20.0853C9.13357 20.3552 8.99501 20.9314 9.26492 21.3721C9.53478 21.813 10.1109 21.9515 10.5517 21.6816L20.7991 15.4073C21.7803 14.8087 22.3674 13.7653 22.3698 12.6159C22.3721 11.4666 21.7892 10.4207 20.8109 9.81848Z"
-                      fill="white"
-                      className="group-hover:fill-[#00D8B2] transition-[fill] duration-[0.3s]"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_6_3357">
-                      <rect
-                        width="24"
-                        height="24"
-                        fill="white"
-                        transform="translate(0.00488281 0.587891)"
-                      />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </div>
-              <span className="text-xl font-semibold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-[0.3s] ease-[ease] group-hover:translate-x-[50px] group-hover:opacity-0">
-                Get started
-              </span>
-            </button>
-          </div>
-        </>
+        <div className="flex flex-col items-center h-14 w-[249px] max-sm:w-full">
+        <button
+      className="group relative flex justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[100px] w-[210px] max-sm:w-full max-sm:max-w-[300px] transition-all duration-300 ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden"
+    >
+      {/* Text */}
+      <span className="text-xl font-semibold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-300 ease-[ease] group-hover:-translate-x-[20px]">
+        Get Started
+      </span>
+
+      {/* Arrow */}
+      <span className="absolute right-[20px] translate-x-[40px] opacity-0 transition-all duration-300 ease-[ease] group-hover:translate-x-0 group-hover:opacity-100">
+        <Image
+          src="/arrow-right.svg"
+          alt="Arrow"
+          width={24}
+          height={24}
+          className="w-6 h-6"
+        />
+      </span>
+    </button>
+        </div>
       </div>
     </main>
   );
-}
+};
+export default Features;

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 
 interface SectionHeaderProps {
@@ -15,24 +16,23 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
     <div className="flex flex-col items-center w-full">
       <div className="flex flex-col items-center w-full max-w-[1192px]">
         <div className="flex flex-col gap-2 items-center w-full">
-          <header className="flex flex-col items-center w-full">
-            <h1
-              className="w-full text-[44px] font-bold leading-[40px] text-center capitalize bg-clip-text max-w-[1050px] max-md:text-4xl max-md:leading-9 max-sm:text-3xl max-sm:leading-8"
-              style={{
-                fontFamily: "Font 1",
-                fontWeight: 700,
-                fontStyle: "bold",
-                letterSpacing: "0%",
-                verticalAlign: "middle",
-                background:
-                  "linear-gradient(114.64deg, #00D8B2 22.88%, #048EEA 88.49%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              {title}
-            </h1>
-          </header>
+        <header className="flex flex-col items-center w-full">
+  <h1
+    className="w-full text-[42px] font-bold leading-[80px] text-center capitalize bg-clip-text max-w-[1050px] max-md:text-4xl max-md:leading-[44px] max-sm:text-3xl max-sm:leading-[36px]"
+    style={{
+      fontFamily: "Font 1",
+      fontWeight: 700,
+      letterSpacing: "0%",
+      background:
+        "linear-gradient(114.64deg, #00D8B2 22.88%, #048EEA 88.49%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+    }}
+  >
+    {title}
+  </h1>
+</header>
+
           <p className="w-full text-lg leading-8 text-center text-gray-600 max-w-[1294px] max-md:text-base max-md:leading-7 max-sm:text-sm max-sm:leading-6">
             {subtitle}
           </p>
@@ -94,43 +94,26 @@ export const GetStartedButton: React.FC<GetStartedButtonProps> = ({
 }) => {
   return (
     <div className="flex flex-col items-center h-14 w-[249px] max-sm:w-full">
-      <button
-        onClick={onClick}
-        className="group flex shrink-0 gap-3 justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[100px] w-[210px] max-sm:w-full max-sm:max-w-[300px] transition-all duration-[0.3s] ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden"
-      >
-        <div className="relative transition-all duration-[0.3s] ease-[ease] group-hover:absolute group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:scale-110">
-          <svg
-            width="24"
-            height="25"
-            viewBox="0 0 24 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6 flex-shrink-0 group-hover:fill-[#00D8B2] transition-[fill] duration-[0.3s]"
-          >
-            <g clipPath="url(#clip0_6_3357)">
-              <path
-                d="M20.8109 9.81848L6.63593 1.08075C5.6104 0.449388 4.37051 0.423138 3.31915 1.01053C2.26779 1.59783 1.64014 2.66756 1.64014 3.87182V21.2677C1.64014 23.0886 3.10732 24.578 4.91061 24.5878L4.92528 24.5879C5.48881 24.5878 6.07606 24.4112 6.62454 24.0765C7.06578 23.8073 7.20523 23.2314 6.93603 22.7902C6.66682 22.3489 6.09082 22.2095 5.64973 22.4787C5.39318 22.6352 5.14264 22.7161 4.92068 22.7161C4.24029 22.7124 3.51181 22.1295 3.51181 21.2677V3.87187C3.51181 3.35526 3.78106 2.8965 4.232 2.64454C4.68298 2.39259 5.21478 2.40384 5.65414 2.67436L19.8292 11.4121C20.2552 11.6744 20.499 12.1118 20.498 12.6121C20.497 13.1124 20.2514 13.5488 19.823 13.8103L9.57439 20.0853C9.13357 20.3552 8.99501 20.9314 9.26492 21.3721C9.53478 21.813 10.1109 21.9515 10.5517 21.6816L20.7991 15.4073C21.7803 14.8087 22.3674 13.7653 22.3698 12.6159C22.3721 11.4666 21.7892 10.4207 20.8109 9.81848Z"
-                fill="white"
-                className="group-hover:fill-[#00D8B2] transition-[fill] duration-[0.3s]"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_6_3357">
-                <rect
-                  width="24"
-                  height="24"
-                  fill="white"
-                  transform="translate(0.00488281 0.587891)"
-                />
-              </clipPath>
-            </defs>
-          </svg>
-        </div>
-        <span className="text-xl font-semibold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-[0.3s] ease-[ease] group-hover:translate-x-[50px] group-hover:opacity-0">
-          {text}
-        </span>
-      </button>
-    </div>
+    <button
+      className="group relative flex justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[100px] w-[210px] max-sm:w-full max-sm:max-w-[300px] transition-all duration-300 ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden"
+    >
+      {/* Text */}
+      <span className="text-xl font-semibold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-300 ease-[ease] group-hover:-translate-x-[20px]">
+        Get Started
+      </span>
+
+      {/* Arrow */}
+      <span className="absolute right-[20px] translate-x-[40px] opacity-0 transition-all duration-300 ease-[ease] group-hover:translate-x-0 group-hover:opacity-100">
+        <Image
+          src="/arrow-right.svg"
+          alt="Arrow"
+          width={24}
+          height={24}
+          className="w-6 h-6"
+        />
+      </span>
+    </button>
+  </div>
   );
 };
 
