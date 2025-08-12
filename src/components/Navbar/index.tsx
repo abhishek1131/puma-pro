@@ -20,7 +20,7 @@ const menuItems = [
   { label: "Features", href: "#features" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Pricing", href: "#pricing" },
-  { label: "About Us", href: "#about" },
+  { label: "About Us", href: "about-us" },
 ];
 
 export const NavigationMenu: React.FC = () => {

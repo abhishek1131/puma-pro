@@ -103,16 +103,16 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   return (
     <article
     className={`
+      hover:border-teal-500 hover:border hover:border-2
       group relative box-border flex flex-col shrink-0 gap-16 justify-center items-center p-2.5
       bg-white rounded-2xl h-[256px] w-[660px] transition-all duration-300 ease-in-out
       hover:shadow-[0_0_25px_rgba(0,216,178,0.08),0_0_40px_rgba(0,117,195,0.08)]
       shadow-md
       before:content-[''] before:absolute before:inset-0 before:rounded-2xl
       before:border-[4px] before:border-transparent
-      before:[border-image-source:linear-gradient(90deg,#00D8B2,#00D8B2)]
-      before:[border-image-slice:1]
+      group-hover:before:border-teal-600
       before:opacity-0 group-hover:before:opacity-100
-      before:transition-opacity before:duration-300
+      before:transition-all before:duration-300
       before:pointer-events-none before:z-[1]
       ${containerClassName}
     `}
@@ -137,6 +137,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
       )}
     </div>
   </article>
+  
   
   
   

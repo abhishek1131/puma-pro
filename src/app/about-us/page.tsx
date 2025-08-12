@@ -1,3 +1,5 @@
+import Footer from "@/components/footer";
+import { Navigation } from "@/components/Navbar";
 import React from "react";
 
 export function TeamSection() {
@@ -7,44 +9,61 @@ export function TeamSection() {
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Caveat:wght@400&display=swap"
       />
-      <div className="box-border flex flex-col justify-center items-center px-12 py-24 w-full bg-slate-50 min-h-[902px] max-md:px-8 max-md:py-16 max-sm:px-5 max-sm:py-12">
-        <div className="flex flex-col gap-20 items-start w-full max-w-[1824px] max-md:gap-16 max-sm:gap-10">
+      <div className="box-border flex flex-col justify-center items-center px-4 py-24 w-full bg-slate-50 min-h-[902px] max-[1440px]:px-3 max-[1024px]:px-2 max-md:py-16 max-sm:px-2 max-sm:py-12">
+        <div className="flex flex-col gap-20 items-start w-full max-w-screen-xl max-[1440px]:max-w-screen-lg max-[1024px]:max-w-screen-md max-[1024px]:gap-16 max-sm:gap-10">
           <div className="flex flex-col gap-6 items-center w-full">
             <div className="flex flex-col gap-2.5 justify-center items-center px-2.5 py-1 h-10 border border-solid border-sky-600 border-opacity-50 rounded-[50px] w-[132px]">
               <div className="flex shrink-0 gap-1 items-center h-[21px]">
-                <div className="text-xl tracking-tight leading-7 text-gray-600 max-sm:text-base">
+                <div className="text-xl tracking-tight leading-7 text-gray-600 max-[1024px]:text-lg max-sm:text-base">
                   Our Team
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-4 justify-center items-center w-full max-w-[1090px]">
+            <div className="flex flex-col gap-4 justify-center items-center w-full max-w-[1090px] max-[1440px]:max-w-[960px] max-[1024px]:max-w-[800px]">
               <div className="flex flex-col gap-2 items-start self-stretch">
-                <div className="self-stretch text-3xl font-bold tracking-tighter leading-10 text-center text-neutral-700 max-md:text-3xl max-sm:text-2xl max-sm:leading-8">
+                <div
+                  className="self-stretch text-center"
+                  style={{
+                    fontFamily: "Inter",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                    fontSize: "32px",
+                    lineHeight: "130%",
+                    letterSpacing: "-2%",
+                    color: "#3A3A3A",
+                  }}
+                >
                   Built by Property Managers, for Property Managers
                 </div>
               </div>
-              <div className="w-full text-xl leading-7 text-center max-w-[1090px] text-neutral-700 text-opacity-80 max-md:text-lg max-md:leading-7 max-sm:text-base max-sm:leading-6">
-                Our founders are industry insiders who've lived the challenges
-                of property management first hand. We know the pain of juggling
-                outdated systems, rising booking fees, and the ever-increasing
-                costs of modern tech. That's why Puma Pro is designed to give
-                you choice and control, letting you run your business your way
-                without the extravagant expenses that come with most new
-                platforms.
+              <div
+                className="w-full text-center"
+                style={{
+                  fontFamily: "Inter",
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  fontSize: "20px",
+                  lineHeight: "28px",
+                  letterSpacing: "0%",
+                  color: "#3A3A3ACC",
+                }}
+              >
+                Our founders are industry insiders who've lived the challenges of property management first hand. We know the pain of juggling outdated systems, rising booking fees, and the ever-increasing costs of modern tech. That's why Puma Pro is designed to give you choice and control, letting you run your business your way without the extravagant expenses that come with most new platforms.
               </div>
             </div>
           </div>
-          <div className="relative w-full h-[396px] max-w-[1090px] max-md:flex max-md:static max-md:flex-col max-md:gap-10 max-md:h-auto max-sm:gap-8">
-            <div className="absolute top-0 left-0 shrink-0 h-[396px] w-[648px] max-md:static max-md:self-center max-md:w-full max-md:h-auto max-md:max-w-[600px] max-sm:max-w-full">
-              <div className="absolute top-0 left-0 shrink-0 border-2 border-solid bg-zinc-300 border-orange-100 border-opacity-60 h-[396px] w-[648px] max-md:static max-md:w-full max-md:h-[300px] max-sm:h-[250px]"></div>
+          <div className="flex self-center relative w-full max-w-[1090px] h-[396px] max-[1440px]:max-w-[960px] max-[1024px]:flex-col max-[1024px]:static max-[1024px]:gap-10 max-[1024px]:h-auto max-sm:gap-8">
+            <div className="relative shrink-0 h-[396px] w-full max-w-[648px] max-[1024px]:static max-[1024px]:self-center max-[1024px]:w-full max-[1024px]:h-auto max-[1024px]:max-w-[600px] max-sm:max-w-full">
+              <div className="absolute top-0 left-0 shrink-0 border-2 border-solid bg-zinc-300 border-orange-100 border-opacity-60 h-[396px] w-full max-w-[648px] max-[1024px]:static max-[1024px]:w-full max-[1024px]:h-[300px] max-sm:h-[200px]"></div>
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/8d10b6ec64621ab8055c31c9513ba19f514e9224?width=1297"
-                alt=""
-                className="object-cover absolute left-0 shrink-0 border-2 border-solid aspect-[648.72/432.21] border-orange-100 border-opacity-60 h-[432px] top-[-18px] w-[649px] max-md:static max-md:top-0 max-md:left-0 max-md:w-full max-md:h-[300px] max-sm:h-[250px]"
+                alt="Team image"
+                className="object-cover absolute left-0 top-[-18px] shrink-0 border-2 border-solid border-orange-100 border-opacity-60 h-[432px] w-full max-w-[649px] max-[1024px]:static max-[1024px]:top-0 max-[1024px]:left-0 max-[1024px]:w-full max-[1024px]:h-[300px] max-sm:h-[200px]"
+                loading="lazy"
               />
             </div>
-            <div className="flex absolute flex-col shrink-0 justify-center items-center bg-white border-2 border-sky-200 border-solid shadow-sm h-[343px] left-[557px] top-[27px] w-[533px] max-md:static max-md:self-center max-md:px-5 max-md:py-10 max-md:w-full max-md:h-auto max-md:max-w-[500px] max-sm:px-4 max-sm:py-8 max-sm:max-w-full">
-              <div className="flex flex-col gap-6 items-start w-[402px] max-md:w-full max-md:max-w-[380px] max-sm:gap-5">
+            <div className="flex absolute flex-col shrink-0 justify-center items-center bg-white border-2 border-sky-200 border-solid shadow-sm h-[343px] left-[557px] top-[27px] w-full max-w-[533px] max-[1024px]:static max-[1024px]:self-center max-[1024px]:px-5 max-[1024px]:py-10 max-[1024px]:w-full max-[1024px]:h-auto max-[1024px]:max-w-[500px] max-sm:px-4 max-sm:py-8 max-sm:max-w-full">
+              <div className="flex flex-col gap-6 items-start w-full max-w-[402px] max-[1024px]:w-full max-[1024px]:max-w-[380px] max-sm:gap-5">
                 <div>
                   <svg
                     width="41"
@@ -66,11 +85,48 @@ export function TeamSection() {
                     />
                   </svg>
                 </div>
-                <div className="self-stretch text-base leading-8 whitespace-pre-line text-black text-opacity-60 max-md:text-base max-md:leading-7 max-sm:text-sm max-sm:leading-6">
-                  {`With many years in property investment, property management, and technology, I know firsthand the challenges property managers face. That's why we built Puma Pro: to give you real control, powerful automation, and the freedom to grow your business your way.
-
--Chrys
-Founder, Puma Pro`}
+                <div
+                  className="self-stretch text-black text-opacity-60"
+                  style={{
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                    fontStyle: "normal",
+                    fontSize: "16px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    color: "#00000099",
+                    textAlign: "justify",
+                  }}
+                >
+                  {`With many years in property investment, property management, and technology, I know firsthand the challenges property managers face. That's why we built Puma Pro: to give you real control, powerful automation, and the freedom to grow your business your way.`}
+                  <div
+                    style={{
+                      fontFamily: "Caveat",
+                      fontWeight: 400,
+                      fontStyle: "italic",
+                      fontSize: "32px",
+                      lineHeight: "32px",
+                      letterSpacing: "0%",
+                      textAlign: "left",
+                      marginTop: "15px",
+                      color: "#00000099",
+                    }}
+                  >
+                    -Chrys
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "Inter",
+                      fontWeight: 400,
+                      fontStyle: "normal",
+                      fontSize: "20px",
+                      lineHeight: "32px",
+                      letterSpacing: "0%",
+                      textAlign: "left",
+                    }}
+                  >
+                    Founder, Puma Pro
+                  </div>
                 </div>
               </div>
             </div>
@@ -88,32 +144,20 @@ interface AboutUsProps {
 export const AboutHeading: React.FC<AboutUsProps> = ({ className = "" }) => {
   return (
     <div
-      className={`box-border flex gap-20 items-center px-64 py-24 mx-auto my-0 w-full max-w-[1849px] max-md:flex-col max-md:gap-12 max-md:items-center max-md:px-8 max-md:py-12 max-md:max-w-[991px] max-sm:gap-8 max-sm:px-4 max-sm:py-8 max-sm:max-w-screen-sm ${className}`}
-      style={{
-        width: "1593px",
-        height: "531px",
-        gap: "74px",
-        angle: "0deg",
-        opacity: 1,
-        top: "96px",
-        left: "256px",
-        position: "relative",
-      }}
+      className={`box-border flex gap-20 items-center px-4 py-24 mx-auto my-0 w-full max-w-screen-xl max-[1440px]:max-w-screen-lg max-[1440px]:px-3 max-[1024px]:flex-col max-[1024px]:gap-12 max-[1024px]:px-2 max-[1024px]:max-w-screen-md max-sm:gap-8 max-sm:px-2 max-sm:py-8 ${className}`}
     >
-      <div className="flex flex-col gap-8 items-start w-[940px] max-md:items-center max-md:w-full max-md:text-center max-md:max-w-[800px]">
+      <div className="flex flex-col gap-8 items-start w-full max-w-[940px] max-[1024px]:items-center max-[1024px]:w-full max-[1024px]:text-center max-[1024px]:max-w-[800px] max-sm:max-w-full">
         <div
-          className="text-6xl font-bold text-left leading-[72px] max-md:text-5xl max-md:text-center max-md:leading-[60px] max-sm:text-4xl max-sm:leading-10"
+          className="max-[1024px]:text-5xl max-[1024px]:leading-[60px] max-sm:text-3xl max-sm:leading-9"
           style={{
             fontFamily: "Inter",
             fontWeight: 700,
-            fontStyle: "Bold",
+            fontStyle: "Regular",
             fontSize: "56px",
-            leadingTrim: "NONE",
             lineHeight: "72px",
-            letterSpacing: "0%",
+            letterSpacing: "0",
             textAlign: "center",
-            background:
-              "linear-gradient(138.38deg, #00D8B2 0%, #018EEB 85.77%)",
+            background: "linear-gradient(138.38deg, #00D8B2 0%, #018EEB 85.77%)",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",
@@ -121,28 +165,53 @@ export const AboutHeading: React.FC<AboutUsProps> = ({ className = "" }) => {
         >
           About Us
         </div>
-        <div className="flex flex-col gap-2 justify-center items-start w-[902px] max-md:items-center max-md:w-full">
-          <div className="flex flex-col gap-9 justify-center items-center w-full max-md:items-center">
-            <div className="w-full text-3xl font-bold tracking-tighter leading-10 text-neutral-700 max-md:text-3xl max-md:text-center max-sm:text-2xl max-sm:tracking-tight">
+        <div className="flex flex-col gap-2 justify-center items-start w-full max-w-[902px] max-[1024px]:items-center max-[1024px]:w-full max-sm:max-w-full">
+          <div className="flex flex-col gap-9 justify-center items-center w-full max-[1024px]:items-center">
+            <div
+              className="w-full max-[1024px]:text-3xl max-[1024px]:text-center max-sm:text-2xl max-sm:leading-8"
+              style={{
+                fontFamily: "Inter",
+                fontWeight: 600,
+                fontStyle: "normal",
+                fontSize: "32px",
+                lineHeight: "130%",
+                color: "#3A3A3A",
+                letterSpacing: "-0.02em",
+              }}
+            >
               Our Legacy &amp; Evolution
             </div>
           </div>
-          <div className="w-full text-xl leading-7 text-neutral-700 text-opacity-80 max-md:text-lg max-md:leading-7 max-md:text-center max-sm:text-base max-sm:leading-6">
-            Puma Pro was built on a solid foundation literally. Our platform is
-            the next evolution of the trusted legacy system, Puma, which has
-            supported property managers for over 20+ years and remains reliable
-            to this day. We took everything that made Puma a favorite
-            dependability, customer focus, and practical features and reimagined
-            it for the modern era.
+          <div
+            className="w-full max-[1024px]:text-lg max-[1024px]:leading-7 max-sm:text-base max-sm:leading-6 max-sm:text-center"
+            style={{
+              fontFamily: "Inter",
+              fontWeight: 400,
+              fontStyle: "Regular",
+              fontSize: "20px",
+              lineHeight: "28px",
+              color: "#3A3A3ACC",
+              letterSpacing: "0",
+            }}
+          >
+            Puma Pro was built on a solid foundation literally. Our platform is the next
+            evolution of the trusted legacy system, Puma, which has supported property
+            managers for over 20+ years and remains reliable to this day. We took
+            everything that made Puma a favorite — dependability, customer focus, and
+            practical features — and reimagined it for the modern era.
           </div>
         </div>
       </div>
-      <div className="shrink-0 flex items-center justify-center">
-        <img
-          src="https://api.builder.io/api/v1/image/assets/TEMP/2501:752?width=579"
-          alt="Puma Logo"
-          className="w-[579px] h-[531px] object-contain"
-        />
+
+      <div className="shrink-0 flex items-center justify-center bg-gradient-to-br from-teal-50 to-white">
+        <div className="bg-white rounded-lg p-6 flex items-center justify-center" style={{ boxShadow: '0 4px 6px rgba(0, 119, 182, 0.1), 15px 0 20px rgba(0, 119, 182, 0.3)' }}>
+          <img
+            src="/aboutus.png"
+            alt="Puma Logo"
+            className="w-[200px] h-auto object-contain max-[1024px]:w-[180px] max-sm:w-[150px]"
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   );
@@ -165,45 +234,35 @@ const LegacyValuesSection: React.FC<LegacyValuesSectionProps> = ({
 
   return (
     <div
-      className="flex flex-col gap-12 justify-center items-start px-5 py-0 mx-auto my-0 w-full max-w-[1408px] max-md:gap-8 max-md:px-6 max-md:py-0 max-md:max-w-[991px] max-sm:gap-6 max-sm:px-4 max-sm:py-0 max-sm:max-w-screen-sm"
-      style={{
-        width: "1408px",
-        height: "310px",
-        gap: "48px",
-        angle: "0deg",
-        opacity: 1,
-        top: "1656px",
-        left: "256px",
-        position: "relative",
-      }}
+      className="flex flex-col gap-12 justify-center items-start px-4 py-24 mx-auto my-0 w-full max-w-screen-xl max-[1440px]:max-w-screen-lg max-[1440px]:px-3 max-[1024px]:max-w-screen-md max-[1024px]:gap-8 max-sm:gap-6 max-sm:px-2 max-sm:max-w-full"
     >
       <div className="flex flex-col gap-4 justify-center items-start w-full">
         <div className="flex flex-col gap-2 justify-center items-start w-full">
           <div
-            className="text-3xl tracking-tighter leading-10 text-neutral-700 max-md:text-3xl max-md:leading-9 max-sm:text-2xl max-sm:tracking-tight max-sm:leading-8"
+            className="max-[1024px]:text-3xl max-[1024px]:leading-9 max-sm:text-2xl max-sm:tracking-tight max-sm:leading-8"
             style={{
               fontFamily: "Inter",
               fontWeight: 600,
-              fontStyle: "Semi Bold",
+              fontStyle: "normal",
               fontSize: "32px",
-              leadingTrim: "NONE",
               lineHeight: "130%",
-              letterSpacing: "-2%",
+              letterSpacing: "-0.02em",
+              color: "#3A3A3A",
             }}
           >
             Legacy Values, Future-Ready Tech
           </div>
         </div>
         <div
-          className="w-full max-w-[1090px] text-neutral-700 text-opacity-80 max-md:text-lg max-md:leading-7 max-sm:text-base max-sm:leading-6"
+          className="w-full max-w-[1090px] text-neutral-700 text-opacity-80 max-[1440px]:max-w-[960px] max-[1024px]:text-lg max-[1024px]:leading-7 max-sm:text-base max-sm:leading-6"
           style={{
             fontFamily: "Inter",
             fontWeight: 400,
-            fontStyle: "Regular",
+            fontStyle: "normal",
             fontSize: "20px",
-            leadingTrim: "NONE",
             lineHeight: "28px",
-            letterSpacing: "0%",
+            letterSpacing: "0em",
+            color: "#3A3A3ACC",
           }}
         >
           With Puma Pro, you get the best of both worlds: the proven values and
@@ -219,7 +278,7 @@ const LegacyValuesSection: React.FC<LegacyValuesSectionProps> = ({
       </div>
       <div className="flex flex-col items-center h-16 max-sm:items-start">
         <button
-          className="flex shrink-0 gap-3 justify-center items-center rounded-lg transition-all cursor-pointer duration-[0.3s] ease-[ease] max-md:px-7 max-md:py-2 max-md:h-14 max-md:w-[220px] max-sm:gap-2 max-sm:px-6 max-sm:py-1.5 max-sm:h-12 max-sm:w-[200px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          className="flex shrink-0 gap-3 justify-center items-center rounded-lg transition-all cursor-pointer duration-[0.3s] ease-[ease] max-[1024px]:px-7 max-[1024px]:py-2 max-[1024px]:h-14 max-[1024px]:w-[220px] max-sm:gap-2 max-sm:px-6 max-sm:py-1.5 max-sm:h-12 max-sm:w-[200px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           style={{
             width: "249px",
             height: "64px",
@@ -236,38 +295,37 @@ const LegacyValuesSection: React.FC<LegacyValuesSectionProps> = ({
               "linear-gradient(107.91deg, #00D8B2 6.31%, #0075C3 95.89%)",
           }}
           aria-label="Book a demo"
+
         >
           <div>
-            <div>
-              <svg
-                width="25"
-                height="25"
-                viewBox="0 0 25 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="play-icon"
-                style={{ width: "24px", height: "24px", flexShrink: 0 }}
-              >
-                <g clipPath="url(#clip0_2501_885)">
-                  <path
-                    d="M21.3109 9.91321L7.13593 1.17547C6.1104 0.544114 4.87051 0.517864 3.81915 1.10525C2.76779 1.69255 2.14014 2.76229 2.14014 3.96655V21.3624C2.14014 23.1833 3.60732 24.6727 5.41061 24.6825L5.42528 24.6826C5.98881 24.6825 6.57606 24.5059 7.12454 24.1712C7.56578 23.902 7.70523 23.3261 7.43603 22.8849C7.16682 22.4436 6.59082 22.3042 6.14973 22.5734C5.89318 22.7299 5.64264 22.8109 5.42068 22.8108C4.74029 22.8071 4.01181 22.2243 4.01181 21.3625V3.9666C4.01181 3.44999 4.28106 2.99122 4.732 2.73927C5.18298 2.48732 5.71478 2.49857 6.15414 2.76908L20.3292 11.5068C20.7552 11.7691 20.999 12.2065 20.998 12.7069C20.997 13.2072 20.7514 13.6436 20.323 13.905L10.0744 20.1801C9.63357 20.45 9.49501 21.0261 9.76492 21.4669C10.0348 21.9077 10.6109 22.0462 11.0517 21.7763L21.2991 15.502C22.2803 14.9035 22.8674 13.86 22.8698 12.7106C22.8721 11.5613 22.2892 10.5155 21.3109 9.91321Z"
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="play-icon"
+              style={{ width: "24px", height: "24px", flexShrink: 0 }}
+            >
+              <g clipPath="url(#clip0_2501_885)">
+                <path
+                  d="M21.3109 9.91321L7.13593 1.17547C6.1104 0.544114 4.87051 0.517864 3.81915 1.10525C2.76779 1.69255 2.14014 2.76229 2.14014 3.96655V21.3624C2.14014 23.1833 3.60732 24.6727 5.41061 24.6825L5.42528 24.6826C5.98881 24.6825 6.57606 24.5059 7.12454 24.1712C7.56578 23.902 7.70523 23.3261 7.43603 22.8849C7.16682 22.4436 6.59082 22.3042 6.14973 22.5734C5.89318 22.7299 5.64264 22.8109 5.42068 22.8108C4.74029 22.8071 4.01181 22.2243 4.01181 21.3625V3.9666C4.01181 3.44999 4.28106 2.99122 4.732 2.73927C5.18298 2.48732 5.71478 2.49857 6.15414 2.76908L20.3292 11.5068C20.7552 11.7691 20.999 12.2065 20.998 12.7069C20.997 13.2072 20.7514 13.6436 20.323 13.905L10.0744 20.1801C9.63357 20.45 9.49501 21.0261 9.76492 21.4669C10.0348 21.9077 10.6109 22.0462 11.0517 21.7763L21.2991 15.502C22.2803 14.9035 22.8674 13.86 22.8698 12.7106C22.8721 11.5613 22.2892 10.5155 21.3109 9.91321Z"
+                  fill="white"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_2501_885">
+                  <rect
+                    width="24"
+                    height="24"
                     fill="white"
+                    transform="translate(0.505005 0.682617)"
                   />
-                </g>
-                <defs>
-                  <clipPath id="clip0_2501_885">
-                    <rect
-                      width="24"
-                      height="24"
-                      fill="white"
-                      transform="translate(0.505005 0.682617)"
-                    />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
+                </clipPath>
+              </defs>
+            </svg>
           </div>
-          <div className="text-xl font-semibold leading-7 text-center text-white max-md:text-lg max-md:leading-6 max-sm:text-base max-sm:leading-6">
+          <div className="text-xl font-semibold leading-7 text-center text-white max-[1024px]:text-lg max-[1024px]:leading-6 max-sm:text-base max-sm:leading-6">
             Book A Demo
           </div>
         </button>
@@ -278,10 +336,12 @@ const LegacyValuesSection: React.FC<LegacyValuesSectionProps> = ({
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full overflow-hidden">
+      <Navigation />
       <AboutHeading />
       <TeamSection />
       <LegacyValuesSection />
+      <Footer />
     </div>
   );
 }
