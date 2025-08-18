@@ -272,7 +272,7 @@ export const SteveAISection: React.FC<SteveAISectionProps> = ({
       <SectionHeading
         title={
           <span>
-            Smarter Support with{" "}
+            Smarter Support with {" "}
             <span
               style={{
                 background:
@@ -282,7 +282,7 @@ export const SteveAISection: React.FC<SteveAISectionProps> = ({
                 color: "transparent",
               }}
             >
-              Steve AI
+               Steve AI
             </span>
           </span>
         }

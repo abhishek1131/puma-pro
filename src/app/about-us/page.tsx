@@ -48,7 +48,7 @@ export function TeamSection() {
                   color: "#3A3A3ACC",
                 }}
               >
-                Our founders are industry insiders who've lived the challenges of property management first hand. We know the pain of juggling outdated systems, rising booking fees, and the ever-increasing costs of modern tech. That's why Puma Pro is designed to give you choice and control, letting you run your business your way without the extravagant expenses that come with most new platforms.
+                Our founders are industry insiders who’ve experienced the challenges of property management firsthand. We understand the frustration of outdated systems, rising booking fees, and the increasing costs of modern technology. That’s why Puma Pro is designed to give you true choice and control—empowering you to run your business your way, without the high costs that come with most new platforms.
               </div>
             </div>
           </div>
@@ -92,20 +92,20 @@ export function TeamSection() {
                     fontWeight: 400,
                     fontStyle: "normal",
                     fontSize: "16px",
-                    lineHeight: "100%",
+                    lineHeight: "20px",
                     letterSpacing: "0%",
                     color: "#00000099",
                     textAlign: "justify",
                   }}
                 >
-                  {`With many years in property investment, property management, and technology, I know firsthand the challenges property managers face. That's why we built Puma Pro: to give you real control, powerful automation, and the freedom to grow your business your way.`}
+                  {`With many years of experience in property investment, property management, and technology, I know firsthand the challenges property managers face. That’s why we built Puma Pro—to give you greater control, powerful automation, and the freedom to grow your business, your way.`}
                   <div
                     style={{
                       fontFamily: "Caveat",
                       fontWeight: 400,
                       fontStyle: "italic",
                       fontSize: "32px",
-                      lineHeight: "32px",
+                      lineHeight: "40px",
                       letterSpacing: "0%",
                       textAlign: "left",
                       marginTop: "15px",
@@ -144,7 +144,7 @@ interface AboutUsProps {
 export const AboutHeading: React.FC<AboutUsProps> = ({ className = "" }) => {
   return (
     <div
-      className={`box-border flex gap-20 items-center px-4 py-24 mx-auto my-0 w-full max-w-screen-xl max-[1440px]:max-w-screen-lg max-[1440px]:px-3 max-[1024px]:flex-col max-[1024px]:gap-12 max-[1024px]:px-2 max-[1024px]:max-w-screen-md max-sm:gap-8 max-sm:px-2 max-sm:py-8 ${className}`}
+      className={`box-border flex gap-20 items-center px-4 py-16 mx-auto my-0 w-full max-w-screen-xl max-[1440px]:max-w-screen-lg max-[1440px]:px-3 max-[1024px]:flex-col max-[1024px]:gap-12 max-[1024px]:px-2 max-[1024px]:max-w-screen-md max-sm:gap-8 max-sm:px-2 max-sm:py-8 ${className}`}
     >
       <div className="flex flex-col gap-8 items-start w-full max-w-[940px] max-[1024px]:items-center max-[1024px]:w-full max-[1024px]:text-center max-[1024px]:max-w-[800px] max-sm:max-w-full">
         <div
@@ -194,23 +194,28 @@ export const AboutHeading: React.FC<AboutUsProps> = ({ className = "" }) => {
               letterSpacing: "0",
             }}
           >
-            Puma Pro was built on a solid foundation literally. Our platform is the next
-            evolution of the trusted legacy system, Puma, which has supported property
-            managers for over 20+ years and remains reliable to this day. We took
-            everything that made Puma a favorite — dependability, customer focus, and
-            practical features — and reimagined it for the modern era.
+            Puma Pro stands on the legacy of Puma—a platform trusted by property managers for 20+ years. We’ve taken everything that made Puma a favorite—reliability, customer focus, and practical features—and reimagined it for the modern era. Welcome to the next generation of property management.
+            Built by Property Managers, for Property Managers.
           </div>
         </div>
       </div>
-
-      <div className="shrink-0 flex items-center justify-center bg-gradient-to-br from-teal-50 to-white">
-        <div className="bg-white rounded-lg p-6 flex items-center justify-center" style={{ boxShadow: '0 4px 6px rgba(0, 119, 182, 0.1), 15px 0 20px rgba(0, 119, 182, 0.3)' }}>
-          <img
-            src="/aboutus.png"
+      <div className="flex flex-col">
+        <div className="w-full flex items-center justify-center">
+          <img src="/aboutus-logo.png"
             alt="Puma Logo"
-            className="w-[200px] h-auto object-contain max-[1024px]:w-[180px] max-sm:w-[150px]"
+            className="relative w-[169px] h-auto object-contain top-[-70px]"
             loading="lazy"
           />
+        </div>
+        <div className="relative top-[-90px] shrink-0 flex items-center justify-center bg-gradient-to-br from-teal-50 to-white">
+          <div className="bg-white rounded-lg p-6 flex items-center justify-center" style={{ boxShadow: '0 0 0 0 rgba(0, 0, 0, 0), 15px 15px 25px rgba(0, 119, 182, 0.1)' }}>
+            <img
+              src="/booking-system-diff.png"
+              alt="Puma Logo"
+              className="w-[478px] h-auto object-contain max-[1024px]:w-[180px] max-sm:w-[150px]"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </div>

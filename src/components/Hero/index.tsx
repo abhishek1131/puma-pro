@@ -43,7 +43,7 @@ export const HeroHeading: React.FC<HeroHeadingProps> = ({ children }) => {
       style={{
         fontFamily: "Inter",
         fontWeight: 700,
-        fontSize: "56px",
+        fontSize: "50px",
         lineHeight: "72px",
         letterSpacing: "0%",
         textAlign: "center",
@@ -60,7 +60,7 @@ export const HeroHeading: React.FC<HeroHeadingProps> = ({ children }) => {
           WebkitTextFillColor: "transparent",
         }}
       >
-        Maximize Your Revenue
+         Maximize Your Revenue
       </span>
     </h1>
   );
@@ -80,8 +80,8 @@ export const HeroDescription: React.FC = () => {
           color: "#3A3A3A",
         }}
       >
-        The all-in-one platform that manages end to end operational tasks with{" "}
-        <span className="font-bold">$0</span> monthly software costs. Puma Pro's
+        The all-in-one platform that manages End-to-end operational tasks with {" "}
+        <span className="font-bold">$0 </span> monthly software costs. Puma Pro's
         flexible pricing designed to scale with your business and support your
         success.
       </p>
@@ -171,7 +171,7 @@ export const HeroSection: React.FC = () => {
           <HeroHeading>
             Reduce Costs, Optimize Operations,
             <br />
-            Maximize Your Revenue
+             Maximize Your Revenue
           </HeroHeading>
         </div>
         <HeroDescription />

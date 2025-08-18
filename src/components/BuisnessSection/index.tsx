@@ -82,7 +82,7 @@ export function Section() {
   const paragraphs = [
     "Puma Pro is a next-generation platform created by industry insiders with over 20 years in property management and MLR, 20+ years in tech, and a team that's actively investing in short-term rentals.",
     "We understand the pain of juggling outdated systems, rising booking fees, and too many tools that don't talk to each other. That's why we rebuilt Puma Pro from the ground up to give you back control.",
-    "We're lean, local, and here to help you grow. With Puma Pro, you're not just using software you're partnering with a team that lives and breathes this industry.",
+    "We're lean, local, and here to help you grow. With Puma Pro, you're not just using software—you're partnering with a team that lives and breathes this industry.",
   ];
 
   return (

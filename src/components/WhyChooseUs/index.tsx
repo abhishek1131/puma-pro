@@ -16,22 +16,22 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
     <div className="flex flex-col items-center w-full">
       <div className="flex flex-col items-center w-full max-w-[1192px]">
         <div className="flex flex-col gap-2 items-center w-full">
-        <header className="flex flex-col items-center w-full">
-  <h1
-    className="w-full text-[42px] font-bold leading-[80px] text-center capitalize bg-clip-text max-w-[1050px] max-md:text-4xl max-md:leading-[44px] max-sm:text-3xl max-sm:leading-[36px]"
-    style={{
-      fontFamily: "Font 1",
-      fontWeight: 700,
-      letterSpacing: "0%",
-      background:
-        "linear-gradient(114.64deg, #00D8B2 22.88%, #048EEA 88.49%)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-    }}
-  >
-    {title}
-  </h1>
-</header>
+          <header className="flex flex-col items-center w-full">
+            <h1
+              className="w-full text-[42px] font-bold leading-[80px] text-center capitalize bg-clip-text max-w-[1050px] max-md:text-4xl max-md:leading-[44px] max-sm:text-3xl max-sm:leading-[36px]"
+              style={{
+                fontFamily: "Font 1",
+                fontWeight: 700,
+                letterSpacing: "0%",
+                background:
+                  "linear-gradient(114.64deg, #00D8B2 22.88%, #048EEA 88.49%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              {title}
+            </h1>
+          </header>
 
           <p className="w-full text-lg leading-8 text-center text-gray-600 max-w-[1294px] max-md:text-base max-md:leading-7 max-sm:text-sm max-sm:leading-6">
             {subtitle}
@@ -94,26 +94,26 @@ export const GetStartedButton: React.FC<GetStartedButtonProps> = ({
 }) => {
   return (
     <div className="flex flex-col items-center h-14 w-[249px] max-sm:w-full">
-    <button
-      className="group relative flex justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[100px] w-[210px] max-sm:w-full max-sm:max-w-[300px] transition-all duration-300 ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden"
-    >
-      {/* Text */}
-      <span className="text-xl font-semibold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-300 ease-[ease] group-hover:-translate-x-[20px]">
-        Get Started
-      </span>
+      <button
+        className="group relative flex justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[100px] w-[210px] max-sm:w-full max-sm:max-w-[300px] transition-all duration-300 ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden"
+      >
+        {/* Text */}
+        <span className="text-xl font-semibold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-300 ease-[ease] group-hover:-translate-x-[20px]">
+          Get Started
+        </span>
 
-      {/* Arrow */}
-      <span className="absolute right-[20px] translate-x-[40px] opacity-0 transition-all duration-300 ease-[ease] group-hover:translate-x-0 group-hover:opacity-100">
-        <Image
-          src="/arrow-right.svg"
-          alt="Arrow"
-          width={24}
-          height={24}
-          className="w-6 h-6"
-        />
-      </span>
-    </button>
-  </div>
+        {/* Arrow */}
+        <span className="absolute right-[20px] translate-x-[40px] opacity-0 transition-all duration-300 ease-[ease] group-hover:translate-x-0 group-hover:opacity-100">
+          <Image
+            src="/arrow-right.svg"
+            alt="Arrow"
+            width={24}
+            height={24}
+            className="w-6 h-6"
+          />
+        </span>
+      </button>
+    </div>
   );
 };
 
@@ -124,7 +124,7 @@ const challengesData = [
     problem:
       "Managing bookings, guest communications, and accounting across multiple fragmented platforms creates inefficiencies and increases errors.",
     solution:
-      "Puma Pro integrates everything into one simple platform, reducing complexity and preventing your workflow.",
+      "Puma Pro integrates everything into one simple platform, reducing complexity and streamlining your workflow.",
     altText: "Home investors choosing designs illustration",
   },
   {
@@ -166,7 +166,8 @@ export const ChallengesSection: React.FC = () => {
       <div className="flex flex-col gap-12 justify-center items-center w-full max-w-[1294px]">
         <SectionHeader
           title="Turning Challenges Into Opportunities"
-          subtitle="Puma Pro transforms the usual headaches into seamless, automated workflows so you can focus on what matters most your guests"
+          subtitle="Puma Pro transforms the usual headaches into seamless, automated
+workflows so you can focus on what matters most—your guests."
         />
 
         <div className="grid grid-cols-2 gap-x-6 gap-y-6 max-w-[1334px] w-full mx-auto max-md:grid-cols-1 max-md:gap-4">

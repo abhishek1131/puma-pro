@@ -202,8 +202,7 @@ export const CallToActionSection: React.FC = () => {
             <div className="flex flex-col items-center w-full">
               <div className="flex flex-col items-center w-full max-w-[1192px]">
                 <p className="w-full text-2xl leading-8 text-center max-w-[1034px] text-neutral-700 max-md:text-xl max-md:leading-7 max-sm:text-lg max-sm:leading-7">
-                  Discover how PumaPro can help you boost revenue and cut costs
-                  built for property managers like you.
+                  Discover how Puma Pro can help you boost revenue and cut costs—built for property managers like you.
                 </p>
               </div>
             </div>
@@ -219,7 +218,7 @@ export const CallToActionSection: React.FC = () => {
           <FeatureCard
             icon={<ExpertSupportIcon />}
             title="Expert Support"
-            description="20+ Years of experience backing you"
+            description="20+ years of experience backing you"
           />
         </div>
 

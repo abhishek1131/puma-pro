@@ -112,7 +112,7 @@ export function WhyPumaProSection() {
       altText: "Smart tools illustration",
       title: "Smart Tools, Simple Experience",
       description:
-        "No complex menus or unnecessary features just a streamlined, easy-to-use platform powered by advanced automation and built-in AI. Enjoy a clutter-free experience that handles the heavy lifting, saves you time, and helps boost your revenue.",
+        "No complex menus or unnecessary features—just a streamlined, easy-to-use platform powered by advanced automation and built-in AI. Enjoy a clutter-free experience that handles the heavy lifting, saves you time, and helps boost your revenue.",
     },
   ];
 

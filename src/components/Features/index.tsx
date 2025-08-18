@@ -234,14 +234,14 @@ const FeatureCards = () => {
       hoveredImg: "/hovered/first.svg",
       title: "No direct fees",
       description:
-        "You decide pass our fee to guests, keep more of your earnings",
+        "You decide—pass our fee to guests and keep more of your earnings.",
     },
     {
       img: "/svgs/second.svg",
       hoveredImg: "/hovered/second.svg",
       title: "True Partnership",
       description:
-        "We only succeed when you do our interests are aligned with your growth.",
+        "We only succeed when you do—our interests are aligned with your growth.",
     },
     {
       img: "/svgs/third.svg",
@@ -255,28 +255,28 @@ const FeatureCards = () => {
       hoveredImg: "/hovered/fourth.svg",
       title: "Integrated with Leading OTAs",
       description:
-        "Connect instantly to Airbnb, Booking.com, Expedia, Agoda and 100's more connections.",
+        "Connect instantly to Airbnb, Booking.com, Expedia, Agoda, and hundreds more.",
     },
     {
       img: "/svgs/fifth.svg",
       hoveredImg: "/hovered/fifth.svg",
       title: "Secure & Transparent",
       description:
-        "Bank level security and real time visibility with PCI and DSS compliance",
+        "Bank-level security and real-time visibility, with PCI and DSS compliance.",
     },
     {
       img: "/svgs/sixth.svg",
       hoveredImg: "/hovered/sixth.svg",
       title: "Effortless Scaling",
       description:
-        "Manage anywhere from 1 to 2,000 properties no performance drop.",
+        "Manage anywhere from 1 to 2,000 properties—no performance drop.",
     },
     {
       img: "/svgs/seventh.svg",
       hoveredImg: "/hovered/seventh.svg",
       title: "24/7 Customer Support",
       description:
-        "Real people, Real help whenever you need it",
+        "Real people, real help whenever you need it.",
     },
   ];
   

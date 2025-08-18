@@ -46,9 +46,8 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
           style={{ fontFamily: "Inter, sans-serif", fontWeight: 600 }}
         >
           <div className="text-2xl max-sm:text-xl group-hover:text-[22px] max-sm:group-hover:text-[18px]">
-            Optimized Pricing Automatically
+            Optimized Pricing Automatically <span className="text-xs group-hover:text-[10px]"> (Live Soon)</span>
           </div>
-          <div className="text-xs group-hover:text-[10px]">(Live Soon)</div>
         </h2>
       );
     }
@@ -156,8 +155,8 @@ export const FeaturesGrid: React.FC = () => {
             <div className="flex flex-col items-center w-full max-w-[1192px]">
               <div className="flex flex-col gap-2 items-center w-full">
                 <header className="flex flex-col items-center w-full">
-                  <h1 className="w-full text-5xl font-bold leading-10 text-center capitalize bg-clip-text max-w-[1050px] max-md:text-4xl max-md:leading-9 max-sm:text-3xl max-sm:leading-8">
-                    PowerFull Features
+                  <h1 className="w-full text-5xl font-bold leading-10 text-center capitalize bg-clip-text max-w-[1050px] max-md:text-4xl max-md:leading-9 max-sm:text-3xl max-sm:leading-8" style={{ color: "#1F2937" }}>
+                    PowerFul Features
                   </h1>
                 </header>
               </div>
@@ -178,8 +177,8 @@ export const FeaturesGrid: React.FC = () => {
               isOddRow={true}
             />
             <FeatureCard
-              title="Steve Ai Assistant"
-              description="AI assistant your intuitive AI assistant that works 24/7 to save you time. From checking the weekend weather forecast to finding local events that could affect your room rates, Steve has it covered. Need to know how many cleans are scheduled this week? Just ask."
+              title="Steve AI Assistant"
+              description="Steve is your intuitive AI assistant, working 24/7 to save you time. From checking the weekend weather forecast to finding local events that could affect your room rates, Steve has it covered. Need to know how many cleans are scheduled this week? Just ask."
               imageUrl="/gif/second.gif"
               imageAlt="Animation4"
               imageWidth={255.51531982421875}
@@ -216,7 +215,8 @@ export const FeaturesGrid: React.FC = () => {
             {/* Row 3: Text First */}
             <FeatureCard
               title="Reporting & Analytics"
-              description="Puma Pro instantly generates all the reports you need bookings, payments, performance, and more automatically. Stay on top of your business with accurate, up-to-date insights."
+              description="Puma Pro instantly generates all the reports you need—bookings,
+payments, performance, and more—automatically. Stay on top of your business with accurate, up-to-date insights."
               imageUrl="/gif/fifth.gif"
               imageAlt="Animation8"
               imageWidth={300}
