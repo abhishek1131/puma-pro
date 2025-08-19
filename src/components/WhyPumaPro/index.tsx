@@ -64,27 +64,27 @@ export function FeatureCard({
 
 export function GetStartedButton() {
   return (
-<div className="flex flex-col items-center h-14 w-[249px] max-sm:w-full">
-    <button
-      className="group relative flex justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[100px] w-[210px] max-sm:w-full max-sm:max-w-[300px] transition-all duration-300 ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden"
-    >
-      {/* Text */}
-      <span className="text-xl font-semibold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-300 ease-[ease] group-hover:-translate-x-[20px]">
-        Get Started
-      </span>
+    <div className="flex flex-col items-center h-14 w-[249px] max-sm:w-full">
+      <button
+        className="group relative flex justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[100px] w-[210px] max-sm:w-full max-sm:max-w-[300px] transition-all duration-300 ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden"
+      >
+        {/* Text */}
+        <span className="text-xl font-semibold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-300 ease-[ease] group-hover:-translate-x-[20px]">
+          Get Started
+        </span>
 
-      {/* Arrow */}
-      <span className="absolute right-[20px] translate-x-[40px] opacity-0 transition-all duration-300 ease-[ease] group-hover:translate-x-0 group-hover:opacity-100">
-        <Image
-          src="/arrow-right.svg"
-          alt="Arrow"
-          width={24}
-          height={24}
-          className="w-6 h-6"
-        />
-      </span>
-    </button>
-  </div>
+        {/* Arrow */}
+        <span className="absolute right-[20px] translate-x-[40px] opacity-0 transition-all duration-300 ease-[ease] group-hover:translate-x-0 group-hover:opacity-100">
+          <Image
+            src="/arrow-right.svg"
+            alt="Arrow"
+            width={24}
+            height={24}
+            className="w-6 h-6"
+          />
+        </span>
+      </button>
+    </div>
   );
 }
 
@@ -104,7 +104,7 @@ export function WhyPumaProSection() {
       altText: "No subscriptions illustration",
       title: "No Subscriptions",
       description:
-        "No monthly fees or fixed costs. Only pay a small fee when you get bookings and you can include it in your accommodation price, so guests cover the cost. Prefer a flat monthly rate? We're flexible to fit your business.",
+        "No monthly fees. No subscriptions. No hidden costs. Absolutely free for managers and property owners. With Puma Pro, you only pay when you get bookings—and you can include the booking fee in your guest's accommodation charge at the point of sale, so you pay nothing out of the pocket. If your rooms aren't occupied, you don't pay a thing. Prefer a flat monthly rate? We're flexible to fit your business.",
     },
     {
       image:
@@ -136,7 +136,20 @@ export function WhyPumaProSection() {
               verticalAlign: "middle",
             }}
           >
-            Why Puma Pro is Different
+            Why {" "} 
+             <span
+              style={{
+                background:
+                  "linear-gradient(138.38deg, #00D8B2 0%, #018EEB 85.77%)",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+               
+              }}
+            >
+              PumaPro
+            </span>
+              {" "}  is Different
           </h1>
         </header>
 

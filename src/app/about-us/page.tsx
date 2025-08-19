@@ -276,7 +276,7 @@ const LegacyValuesSection: React.FC<LegacyValuesSectionProps> = ({
       </div>
       <div className="flex flex-col items-center h-16 max-sm:items-start">
         <button
-          className="flex shrink-0 gap-3 justify-center items-center rounded-lg transition-all cursor-pointer duration-[0.3s] ease-[ease] max-[1024px]:px-7 max-[1024px]:py-2 max-[1024px]:h-14 max-[1024px]:w-[220px] max-sm:gap-2 max-sm:px-6 max-sm:py-1.5 max-sm:h-12 max-sm:w-[200px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          className="flex shrink-0 gap-3 justify-center items-center rounded-[50px] transition-all cursor-pointer duration-[0.3s] ease-[ease] max-[1024px]:px-7 max-[1024px]:py-2 max-[1024px]:h-14 max-[1024px]:w-[220px] max-sm:gap-2 max-sm:px-6 max-sm:py-1.5 max-sm:h-12 max-sm:w-[200px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           style={{
             width: "249px",
             height: "64px",
@@ -287,7 +287,7 @@ const LegacyValuesSection: React.FC<LegacyValuesSectionProps> = ({
             paddingRight: "32.86px",
             paddingBottom: "10.27px",
             paddingLeft: "32.87px",
-            borderRadius: "8px",
+            borderRadius: "50px",
             borderWidth: "1px",
             background:
               "linear-gradient(107.91deg, #00D8B2 6.31%, #0075C3 95.89%)",

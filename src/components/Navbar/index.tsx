@@ -43,7 +43,7 @@ export const NavigationMenu: React.FC = () => {
         <div className="flex gap-4 justify-center items-center h-10">
           <div className="flex gap-4 items-start h-10">
             <div className="flex flex-col items-end h-10">
-              <button className="group flex shrink-0 gap-3 justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-10 rounded-lg transition-all duration-[0.3s] ease-[ease] w-[200] max-md:w-[220px] max-sm:px-6 max-sm:py-2 max-sm:h-14 max-sm:w-[200px] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden">
+              <button className="group flex shrink-0 gap-3 justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-10 rounded-[50px] transition-all duration-[0.3s] ease-[ease] w-[200] max-md:w-[220px] max-sm:px-6 max-sm:py-2 max-sm:h-14 max-sm:w-[200px] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden">
                 <div className="relative transition-all duration-[0.3s] ease-[ease] group-hover:absolute group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:scale-110">
                   <svg
                     width="12"
