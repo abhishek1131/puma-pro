@@ -12,13 +12,6 @@ export function TeamSection() {
       <div className="box-border flex flex-col justify-center items-center px-4 py-24 w-full bg-slate-50 min-h-[902px] max-[1440px]:px-3 max-[1024px]:px-2 max-md:py-16 max-sm:px-2 max-sm:py-12">
         <div className="flex flex-col gap-20 items-start w-full max-w-screen-xl max-[1440px]:max-w-screen-lg max-[1024px]:max-w-screen-md max-[1024px]:gap-16 max-sm:gap-10">
           <div className="flex flex-col gap-6 items-center w-full">
-            <div className="flex flex-col gap-2.5 justify-center items-center px-2.5 py-1 h-10 border border-solid border-sky-600 border-opacity-50 rounded-[50px] w-[132px]">
-              <div className="flex shrink-0 gap-1 items-center h-[21px]">
-                <div className="text-xl tracking-tight leading-7 text-gray-600 max-[1024px]:text-lg max-sm:text-base">
-                  Our Team
-                </div>
-              </div>
-            </div>
             <div className="flex flex-col gap-4 justify-center items-center w-full max-w-[1090px] max-[1440px]:max-w-[960px] max-[1024px]:max-w-[800px]">
               <div className="flex flex-col gap-2 items-start self-stretch">
                 <div
@@ -194,7 +187,7 @@ export const AboutHeading: React.FC<AboutUsProps> = ({ className = "" }) => {
               letterSpacing: "0",
             }}
           >
-            Puma Pro stands on the legacy of Puma—a platform trusted by property managers for 20+ years. We’ve taken everything that made Puma a favorite—reliability, customer focus, and practical features—and reimagined it for the modern era. Welcome to the next generation of property management.
+            Puma Pro stands on the legacy of Puma—a platform trusted by property managers for 20+ years. We’ve taken everything that made Puma a favourite—reliability, customer focus, and practical features—and reimagined it for the modern era. Welcome to the next generation of property management.
             Built by Property Managers, for Property Managers.
           </div>
         </div>
