@@ -163,7 +163,7 @@ export const FeaturesGrid: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-24 gap-y-8 max-w-[1334px] w-full  max-md:grid-cols-1 max-md:gap-8">
+          <div className="grid grid-cols-2 gap-x-24 gap-y-8 max-w-[1334px] w-full  max-md:grid-cols-1 max-md:gap-8 -ml-[55px]">
             {/* Row 1: Text First */}
             <FeatureCard
               title="Integrated Payment Processor"
