@@ -156,7 +156,7 @@ export const FeaturesGrid: React.FC = () => {
               <div className="flex flex-col gap-2 items-center w-full">
                 <header className="flex flex-col items-center w-full">
                   <h1 className="w-full text-5xl font-bold leading-10 text-center capitalize bg-clip-text max-w-[1050px] max-md:text-4xl max-md:leading-9 max-sm:text-3xl max-sm:leading-8" style={{ color: "#1F2937" }}>
-                    PowerFul Features
+                    Powerful Features
                   </h1>
                 </header>
               </div>
