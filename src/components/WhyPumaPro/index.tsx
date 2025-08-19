@@ -7,58 +7,112 @@ interface FeatureCardProps {
   altText: string;
   title: string;
   description: string;
+  isNoSubscriptions:string
 }
 
 export function FeatureCard({
   image,
   altText,
   title,
-  description,
+  description,isNoSubscriptions
 }: FeatureCardProps) {
   return (
-    <article className="flex flex-col justify-center items-center pb-6 bg-white rounded-2xl shadow-md h-[436px] w-[380px] max-md:p-6 max-md:w-full max-md:h-auto max-md:max-w-[400px] max-sm:p-5 transition-all duration-300 hover:shadow-2xl hover:border-2 hover:border-teal-500 hover:h-[456px] hover:w-[400px] max-md:hover:h-[420px] max-md:hover:w-[420px] max-sm:hover:h-[380px] max-sm:hover:w-[380px]">
-      <img
-        src={image}
-        alt={altText}
-        className="shrink-0 aspect-[1/1] h-[200px] w-[200px] max-md:h-[150px] max-md:w-[150px] max-sm:h-[120px] max-sm:w-[120px] transition-all duration-300 hover:h-[220px] hover:w-[220px] max-md:hover:h-[165px] max-md:hover:w-[165px] max-sm:hover:h-[132px] max-sm:hover:w-[132px]"
-      />
-      <div className="flex flex-col shrink-0 gap-2 items-center w-full h-[138px] max-md:gap-3 max-md:h-auto">
-        <header className="flex flex-col items-center w-full transition-all duration-300 hover:translate-y-2 hover:scale-95">
-          <h2
-            className="w-full text-xl font-bold leading-7 text-center bg-clip-text text-transparent max-md:text-lg max-md:leading-6 max-sm:text-base max-sm:leading-5"
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 600,
-              fontSize: "20px",
-              lineHeight: "28px",
-              letterSpacing: "0%",
-              textAlign: "center",
-              verticalAlign: "middle",
-              backgroundImage:
-                "linear-gradient(90deg, #00C2A0 0%, #0075C3 100%)",
-            }}
-          >
-            {title}
-          </h2>
-        </header>
-        <div className="flex flex-col items-center px-7 py-0 max-w-screen-md max-md:px-4 max-md:py-0 max-sm:px-2 max-sm:py-0 transition-all duration-300 hover:translate-y-2 hover:scale-95">
-          <p
-            className="w-full text-base leading-5 text-center text-gray-600 max-md:text-sm max-md:leading-5 max-sm:text-sm max-sm:leading-4"
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 400,
-              fontSize: "15px",
-              lineHeight: "20px",
-              letterSpacing: "0%",
-              textAlign: "center",
-              verticalAlign: "middle",
-            }}
-          >
-            {description}
-          </p>
-        </div>
-      </div>
-    </article>
+    // <article className="flex flex-col justify-center items-center pb-6 bg-white rounded-2xl shadow-md h-[436px] w-[380px] max-md:p-6 max-md:w-full max-md:h-auto max-md:max-w-[400px] max-sm:p-5 transition-all duration-300 hover:shadow-2xl hover:border-2 hover:border-teal-500 hover:h-[456px] hover:w-[400px] max-md:hover:h-[420px] max-md:hover:w-[420px] max-sm:hover:h-[380px] max-sm:hover:w-[380px]">
+    //   <img
+    //     src={image}
+    //     alt={altText}
+    //     className="shrink-0 aspect-[1/1] h-[200px] w-[200px] max-md:h-[150px] max-md:w-[150px] max-sm:h-[120px] max-sm:w-[120px] transition-all duration-300 hover:h-[220px] hover:w-[220px] max-md:hover:h-[165px] max-md:hover:w-[165px] max-sm:hover:h-[132px] max-sm:hover:w-[132px]"
+    //   />
+    //   <div className="flex flex-col shrink-0 gap-2 items-center w-full h-[138px] max-md:gap-3 max-md:h-auto">
+    //     <header className="flex flex-col items-center w-full transition-all duration-300 hover:translate-y-2 hover:scale-95">
+    //       <h2
+    //         className="w-full text-xl font-bold leading-7 text-center bg-clip-text text-transparent max-md:text-lg max-md:leading-6 max-sm:text-base max-sm:leading-5"
+    //         style={{
+    //           fontFamily: "Inter, sans-serif",
+    //           fontWeight: 600,
+    //           fontSize: "20px",
+    //           lineHeight: "28px",
+    //           letterSpacing: "0%",
+    //           textAlign: "center",
+    //           verticalAlign: "middle",
+    //           backgroundImage:
+    //             "linear-gradient(90deg, #00C2A0 0%, #0075C3 100%)",
+    //         }}
+    //       >
+    //         {title}
+    //       </h2>
+    //     </header>
+    //     <div className="flex flex-col items-center px-7 py-0 max-w-screen-md max-md:px-4 max-md:py-0 max-sm:px-2 max-sm:py-0 transition-all duration-300 hover:translate-y-2 hover:scale-95">
+    //       <p
+    //         className="w-full text-base leading-5 text-center text-gray-600 max-md:text-sm max-md:leading-5 max-sm:text-sm max-sm:leading-4"
+    //         style={{
+    //           fontFamily: "Inter, sans-serif",
+    //           fontWeight: 400,
+    //           fontSize: "15px",
+    //           lineHeight: "20px",
+    //           letterSpacing: "0%",
+    //           textAlign: "center",
+    //           verticalAlign: "middle",
+    //         }}
+    //       >
+    //         {description}
+    //       </p>
+    //     </div>
+    //   </div>
+    // </article>
+    <article
+  className={`flex flex-col justify-center items-center pb-6 bg-white rounded-2xl shadow-md transition-all duration-300 hover:shadow-2xl hover:border-2 hover:border-teal-500 ${
+    isNoSubscriptions
+      ? "h-[523px] w-[456px] max-md:h-[504px] max-md:w-[504px] max-sm:h-[456px] max-sm:w-[456px] hover:h-[547px] hover:w-[480px] max-md:hover:h-[504px] max-md:hover:w-[504px] max-sm:hover:h-[456px] max-sm:hover:w-[456px]"
+      : "h-[436px] w-[380px] max-md:h-auto max-md:w-full max-md:max-w-[400px] hover:h-[456px] hover:w-[400px] max-md:hover:h-[420px] max-md:hover:w-[420px] max-sm:hover:h-[380px] max-sm:hover:w-[380px]"
+  }`}
+>
+  <img
+    src={image}
+    alt={altText}
+    className={`shrink-0 aspect-[1/1] transition-all duration-300 ${
+      isNoSubscriptions
+        ? "h-[240px] w-[240px] max-md:h-[180px] max-md:w-[180px] max-sm:h-[144px] max-sm:w-[144px] hover:h-[264px] hover:w-[264px] max-md:hover:h-[198px] max-md:hover:w-[198px] max-sm:hover:h-[158px] max-sm:hover:w-[158px]"
+        : "h-[200px] w-[200px] max-md:h-[150px] max-md:w-[150px] max-sm:h-[120px] max-sm:w-[120px] hover:h-[220px] hover:w-[220px] max-md:hover:h-[165px] max-md:hover:w-[165px] max-sm:hover:h-[132px] max-sm:hover:w-[132px]"
+    }`}
+  />
+  <div className="flex flex-col shrink-0 gap-2 items-center w-full h-[138px] max-md:gap-3 max-md:h-auto">
+    <header className="flex flex-col items-center w-full transition-all duration-300 hover:translate-y-2 hover:scale-95">
+      <h2
+        className="w-full text-xl font-bold leading-7 text-center bg-clip-text text-transparent max-md:text-lg max-md:leading-6 max-sm:text-base max-sm:leading-5"
+        style={{
+          fontFamily: "Inter, sans-serif",
+          fontWeight: 600,
+          fontSize: "20px",
+          lineHeight: "28px",
+          letterSpacing: "0%",
+          textAlign: "center",
+          verticalAlign: "middle",
+          backgroundImage:
+            "linear-gradient(90deg, #00C2A0 0%, #0075C3 100%)",
+        }}
+      >
+        {title}
+      </h2>
+    </header>
+    <div className="flex flex-col items-center px-7 py-0 max-w-screen-md max-md:px-4 max-md:py-0 max-sm:px-2 max-sm:py-0 transition-all duration-300 hover:translate-y-2 hover:scale-95">
+      <p
+        className="w-full text-base leading-5 text-center text-gray-600 max-md:text-sm max-md:leading-5 max-sm:text-sm max-sm:leading-4"
+        style={{
+          fontFamily: "Inter, sans-serif",
+          fontWeight: 400,
+          fontSize: "15px",
+          lineHeight: "20px",
+          letterSpacing: "0%",
+          textAlign: "center",
+          verticalAlign: "middle",
+        }}
+      >
+        {description}
+      </p>
+    </div>
+  </div>
+</article>
   );
 }
 
@@ -161,6 +215,7 @@ export function WhyPumaProSection() {
               altText={feature.altText}
               title={feature.title}
               description={feature.description}
+              isNoSubscriptions={feature.title === "No Subscriptions"}
             />
           ))}
         </div>
