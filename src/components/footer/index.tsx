@@ -76,7 +76,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
                   link === "About Us"
                     ? "/about-us"
                     : link === "Contact"
-                    ? "/contact"
+                    ? "/contact-form"
                     : link === "Privacy Policy"
                     ? "/privacy-policy"
                     : "#"
