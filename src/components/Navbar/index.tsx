@@ -94,7 +94,7 @@ export const NavigationMenu: React.FC = () => {
                     </defs>
                   </svg>
                 </div>
-                <span className="text-sm font-semibold leading-6 text-center text-white max-sm:text-base max-sm:leading-5 transition-all duration-[0.3s] ease-[ease] group-hover:translate-x-[40px] group-hover:opacity-0">
+                <span className="cursor-pointer text-sm font-semibold leading-6 text-center text-white max-sm:text-base max-sm:leading-5 transition-all duration-[0.3s] ease-[ease] group-hover:translate-x-[40px] group-hover:opacity-0">
                   Book A Demo
                 </span>
               </button>

@@ -159,7 +159,8 @@ export const AboutHeading: React.FC<AboutUsProps> = ({ className = "" }) => {
             lineHeight: "72px",
             letterSpacing: "0",
             textAlign: "center",
-            background: "linear-gradient(138.38deg, #00D8B2 0%, #018EEB 85.77%)",
+            background:
+              "linear-gradient(138.38deg, #00D8B2 0%, #018EEB 85.77%)",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",
@@ -196,33 +197,38 @@ export const AboutHeading: React.FC<AboutUsProps> = ({ className = "" }) => {
               letterSpacing: "0",
             }}
           >
-            Puma Pro stands on the legacy of Puma—a platform trusted by property managers for 20+ years. We’ve taken everything that made Puma a favourite—reliability, customer focus, and practical features—and reimagined it for the modern era. Welcome to the next generation of property management.
-            Built by Property Managers, for Property Managers.
+            Puma Pro stands on the legacy of Puma—a platform trusted by property
+            managers for 20+ years. We’ve taken everything that made Puma a
+            favourite—reliability, customer focus, and practical features—and
+            reimagined it for the modern era. Welcome to the next generation of
+            property management. Built by Property Managers, for Property
+            Managers.
           </div>
         </div>
       </div>
       <div className="flex flex-col">
         <div className="w-full flex items-center justify-center">
-          <img src="/aboutus-logo.png"
+          <img
+            src="/aboutus-logo.png"
             alt="Puma Logo"
             className="relative w-[169px] h-auto object-contain top-[-70px]"
             loading="lazy"
           />
         </div>
         <div className="relative top-[-90px] shrink-0 flex items-center justify-center bg-gradient-to-br from-teal-50 to-white">
-          <div className="w-[415px] bg-white rounded-lg p-6 flex items-center justify-center" style={{ boxShadow: '0 0 0 0 rgba(0, 0, 0, 0), 15px 15px 25px rgba(0, 119, 182, 0.1)' }}>
-            {/* <img
-              src="/booking-system-diff.png"
-              alt="Puma Logo"
-              className="w-[478px] h-auto object-contain max-[1024px]:w-[180px] max-sm:w-[150px]"
-              loading="lazy"
-            /> */}
+          <div
+            className="w-[523px] bg-white rounded-lg p-6 flex items-center justify-center"
+            style={{
+              boxShadow:
+                "0 0 0 0 rgba(0, 0, 0, 0), 15px 15px 25px rgba(0, 119, 182, 0.1)",
+            }}
+          >
             <Image
               src="/booking-system-diff.png"
               alt="Puma Logo"
-              width={415}     // display size
-              height={0}      // auto aspect ratio
-              className="h-auto w-full max-w-[415px] object-contain"
+              width={523} // updated size
+              height={0}
+              className="h-auto w-full max-w-[623px] object-contain"
             />
           </div>
         </div>
@@ -339,7 +345,7 @@ const LegacyValuesSection: React.FC<LegacyValuesSectionProps> = ({
               </defs>
             </svg>
           </div>
-          <div className="text-xl font-semibold leading-7 text-center text-white max-[1024px]:text-lg max-[1024px]:leading-6 max-sm:text-base max-sm:leading-6">
+          <div className="cursor-pointer text-xl font-semibold leading-7 text-center text-white max-[1024px]:text-lg max-[1024px]:leading-6 max-sm:text-base max-sm:leading-6">
             Book A Demo
           </div>
         </button>

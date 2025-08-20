@@ -70,7 +70,7 @@ function GetStartedBtn() {
     <div className="flex gap-3 justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 transition-all cursor-pointer duration-[0.3s] ease-[ease] rounded-[100px] w-[210px] max-sm:px-7 max-sm:py-2 max-sm:h-[50px] max-sm:w-[180px]">
       <div
         layer-name="Container"
-        className="text-xl font-bold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6"
+        className="cursor-pointer text-xl font-bold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6"
       >
         Get Started
       </div>

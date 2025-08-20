@@ -95,11 +95,12 @@ export const GetStartedButton: React.FC<GetStartedButtonProps> = ({
   const router=useRouter()
   return (
     <div className="flex flex-col items-center h-14 w-[249px] max-sm:w-full">
-      <button onClick={()=>router.push("/contact-form")}
+      <button
+        onClick={() => router.push("/contact-form")}
         className="group relative flex justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[100px] w-[210px] max-sm:w-full max-sm:max-w-[300px] transition-all duration-300 ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden"
       >
         {/* Text */}
-        <span className="text-xl font-semibold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-300 ease-[ease] group-hover:-translate-x-[20px]">
+        <span className="cursor-pointer text-xl font-semibold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-300 ease-[ease] group-hover:-translate-x-[20px]">
           Get Started
         </span>
 

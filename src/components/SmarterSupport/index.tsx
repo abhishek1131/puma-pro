@@ -237,26 +237,27 @@ export const GetStartedButton: React.FC<GetStartedButtonProps> = ({
   const router=useRouter()
   return (
     <div className="flex flex-col items-center h-14 w-[249px] max-sm:w-full">
-    <button onClick={()=>router.push("/contact-form")}
-      className="group relative flex justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[100px] w-[210px] max-sm:w-full max-sm:max-w-[300px] transition-all duration-300 ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden"
-    >
-      {/* Text */}
-      <span className="text-xl font-semibold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-300 ease-[ease] group-hover:-translate-x-[20px]">
-        Get Started
-      </span>
+      <button
+        onClick={() => router.push("/contact-form")}
+        className="group relative flex justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[100px] w-[210px] max-sm:w-full max-sm:max-w-[300px] transition-all duration-300 ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden"
+      >
+        {/* Text */}
+        <span className=" cursor-pointer text-xl font-semibold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-300 ease-[ease] group-hover:-translate-x-[20px]">
+          Get Started
+        </span>
 
-      {/* Arrow */}
-      <span className="absolute right-[20px] translate-x-[40px] opacity-0 transition-all duration-300 ease-[ease] group-hover:translate-x-0 group-hover:opacity-100">
-        <Image
-          src="/arrow-right.svg"
-          alt="Arrow"
-          width={24}
-          height={24}
-          className="w-6 h-6"
-        />
-      </span>
-    </button>
-  </div>
+        {/* Arrow */}
+        <span className="absolute right-[20px] translate-x-[40px] opacity-0 transition-all duration-300 ease-[ease] group-hover:translate-x-0 group-hover:opacity-100">
+          <Image
+            src="/arrow-right.svg"
+            alt="Arrow"
+            width={24}
+            height={24}
+            className="w-6 h-6"
+          />
+        </span>
+      </button>
+    </div>
   );
 };
 
