@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import Footer from "@/components/footer";
 import { Navigation } from "@/components/Navbar";
 import React from "react";
@@ -209,12 +210,19 @@ export const AboutHeading: React.FC<AboutUsProps> = ({ className = "" }) => {
           />
         </div>
         <div className="relative top-[-90px] shrink-0 flex items-center justify-center bg-gradient-to-br from-teal-50 to-white">
-          <div className="bg-white rounded-lg p-6 flex items-center justify-center" style={{ boxShadow: '0 0 0 0 rgba(0, 0, 0, 0), 15px 15px 25px rgba(0, 119, 182, 0.1)' }}>
-            <img
+          <div className="w-[415px] bg-white rounded-lg p-6 flex items-center justify-center" style={{ boxShadow: '0 0 0 0 rgba(0, 0, 0, 0), 15px 15px 25px rgba(0, 119, 182, 0.1)' }}>
+            {/* <img
               src="/booking-system-diff.png"
               alt="Puma Logo"
               className="w-[478px] h-auto object-contain max-[1024px]:w-[180px] max-sm:w-[150px]"
               loading="lazy"
+            /> */}
+            <Image
+              src="/booking-system-diff.png"
+              alt="Puma Logo"
+              width={415}     // display size
+              height={0}      // auto aspect ratio
+              className="h-auto w-full max-w-[415px] object-contain"
             />
           </div>
         </div>
