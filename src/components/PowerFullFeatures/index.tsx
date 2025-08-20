@@ -149,7 +149,7 @@ export const FeaturesGrid: React.FC = () => {
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       />
-      <section className="box-border flex flex-col gap-10 justify-center items-center px-12 pt-24 pb-24 w-full bg-[#EBEFF2] min-h-[884px] max-md:px-8 max-md:py-16 max-sm:px-4 max-sm:py-12">
+      <section id="features" className="box-border flex flex-col gap-10 justify-center items-center px-12 pt-24 pb-24 w-full bg-[#EBEFF2] min-h-[884px] max-md:px-8 max-md:py-16 max-sm:px-4 max-sm:py-12">
         <div className="flex flex-col gap-12 justify-center items-center w-full max-w-[1294px]">
           <div className="flex flex-col items-center w-full">
             <div className="flex flex-col items-center w-full max-w-[1192px]">

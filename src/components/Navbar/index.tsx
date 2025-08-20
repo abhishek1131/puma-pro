@@ -15,15 +15,26 @@ export const Logo: React.FC<LogoProps> = ({ className = "" }) => {
   );
 };
 
-
 const menuItems = [
   { label: "Features", href: "#features" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Pricing", href: "#pricing" },
-  { label: "About Us", href: "about-us" },
+  { label: "About Us", href: "/about-us" },
 ];
 
 export const NavigationMenu: React.FC = () => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <nav className="flex gap-3 items-center max-sm:hidden">
       <div className="flex gap-3 items-center max-md:gap-2">
@@ -34,16 +45,17 @@ export const NavigationMenu: React.FC = () => {
           >
             <a
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
               className="text-base leading-6 text-center text-gray-700 max-md:text-base hover:text-gray-900 transition-colors"
             >
               {item.label}
             </a>
           </div>
         ))}
-        <div className="flex gap-4 justify-center items-center h-10">
-          <div className="flex gap-4 items-start h-10">
+        <div className="flex gap-3 justify-center items-center h-10">
+          <div className="flex gap-3 items-start h-10">
             <div className="flex flex-col items-end h-10">
-              <button className="group flex shrink-0 gap-3 justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-10 rounded-[50px] transition-all duration-[0.3s] ease-[ease] w-[200] max-md:w-[220px] max-sm:px-6 max-sm:py-2 max-sm:h-14 max-sm:w-[200px] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden">
+              <button className="group flex shrink-0 gap-2 justify-center items-center pt-2 pr-6 pb-2 pl-6 h-10 rounded-[50px] transition-all duration-300 ease-[ease] w-[160px] max-md:w-[180px] max-sm:px-5 max-sm:py-2 max-sm:h-12 max-sm:w-[160px] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden">
                 <div className="relative transition-all duration-[0.3s] ease-[ease] group-hover:absolute group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:scale-110">
                   <svg
                     width="12"
@@ -72,10 +84,20 @@ export const NavigationMenu: React.FC = () => {
                     </defs>
                   </svg>
                 </div>
-                <span className="text-md font-bold leading-7 text-center text-white max-sm:text-lg max-sm:leading-6 transition-all duration-[0.3s] ease-[ease] group-hover:translate-x-[50px] group-hover:opacity-0">
+                <span className="text-sm font-semibold leading-6 text-center text-white max-sm:text-base max-sm:leading-5 transition-all duration-[0.3s] ease-[ease] group-hover:translate-x-[40px] group-hover:opacity-0">
                   Book A Demo
                 </span>
               </button>
+            </div>
+            <div className="flex flex-col items-end h-10">
+              <a
+                href="https://my.pumapro.com.au"
+                className="group flex shrink-0 gap-2 justify-center items-center pt-2 pr-6 pb-2 pl-6 h-10 rounded-[50px] transition-all duration-300 ease-[ease] w-[160px] max-md:w-[180px] max-sm:px-5 max-sm:py-2 max-sm:h-12 max-sm:w-[160px] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden"
+              >
+                <span className="text-sm font-semibold leading-6 text-center text-white max-sm:text-base max-sm:leading-5 transition-all duration-[0.3s] ease-[ease]">
+                  Login
+                </span>
+              </a>
             </div>
           </div>
         </div>
@@ -83,7 +105,6 @@ export const NavigationMenu: React.FC = () => {
     </nav>
   );
 };
-
 
 export const MobileMenuToggle: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -104,8 +125,6 @@ export const MobileMenuToggle: React.FC = () => {
   );
 };
 
-
-
 export const Navigation: React.FC = () => {
   return (
     <>
@@ -124,8 +143,6 @@ export const Navigation: React.FC = () => {
   );
 };
 
-
-
 interface BookDemoButtonProps {
   text?: string;
   onClick?: () => void;
@@ -140,7 +157,7 @@ export function BookDemoButton({
   return (
     <button
       onClick={onClick}
-      className={`flex relative gap-3 justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-10 rounded-lg transition-all duration-200 cursor-pointer ease-[ease-in-out] w-[121px] max-md:px-6 max-md:pt-2.5 max-md:pb-2.5 max-md:w-auto max-md:min-w-[121px] max-sm:px-6 max-sm:py-3 max-sm:w-full max-sm:h-11 max-sm:max-w-[280px] ${className}`}
+      className={`flex relative gap-3 justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-10 rounded-[50px] transition-all duration-300 ease-[ease] w-[121px] max-md:px-6 max-md:pt-2.5 max-md:pb-2.5 max-md:w-auto max-md:min-w-[121px] max-sm:px-6 max-sm:py-3 max-sm:w-full max-sm:h-11 max-sm:max-w-[280px] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] ${className}`}
     >
       <span className="relative text-sm font-medium leading-5 text-center text-white max-sm:text-sm">
         <span className="text-sm text-white max-sm:text-sm">{text}</span>
@@ -149,11 +166,8 @@ export function BookDemoButton({
   );
 }
 
-
-
 export default function DemoButton() {
   const handleClick = () => {
-    // Handle demo booking logic here
     console.log("Book a Demo clicked");
   };
 

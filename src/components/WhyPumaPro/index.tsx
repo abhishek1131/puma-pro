@@ -171,7 +171,10 @@ export function WhyPumaProSection() {
   ];
 
   return (
-    <section className="flex overflow-hidden relative flex-col items-center px-12 py-20 w-full bg-gray-100 min-h-[767px] max-md:px-6 max-md:py-16 max-sm:px-4 max-sm:py-10">
+    <section
+      id="pricing"
+      className="flex overflow-hidden relative flex-col items-center px-12 py-20 w-full bg-gray-100 min-h-[767px] max-md:px-6 max-md:py-16 max-sm:px-4 max-sm:py-10"
+    >
       <div className="absolute bg-teal-100 rounded-full opacity-20 blur-md h-[297px] right-[calc(50%_+_78.64px)] top-[calc(50%_-_148.445px)] w-[297px]" />
       <div className="absolute bg-blue-100 rounded-full opacity-20 blur-md h-[324px] left-[calc(50%_+_81.81px)] top-[calc(50%_-_162.07px)] w-[324px]" />
 
@@ -190,20 +193,19 @@ export function WhyPumaProSection() {
               verticalAlign: "middle",
             }}
           >
-            Why {" "} 
-             <span
+            Why{" "}
+            <span
               style={{
                 background:
                   "linear-gradient(138.38deg, #00D8B2 0%, #018EEB 85.77%)",
                 backgroundClip: "text",
                 WebkitBackgroundClip: "text",
                 color: "transparent",
-               
               }}
             >
               PumaPro
-            </span>
-              {" "}  is Different
+            </span>{" "}
+            is Different
           </h1>
         </header>
 

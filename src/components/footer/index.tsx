@@ -1,5 +1,6 @@
 "use client";
 import * as React from "react";
+import { useRouter } from "next/navigation";
 
 interface SocialIconProps {
   svgContent: string;
@@ -30,6 +31,33 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
   title,
   links,
 }) => {
+  const router = useRouter();
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    link: string
+  ) => {
+    e.preventDefault();
+    // Map links to their corresponding section IDs
+    const sectionMap: { [key: string]: string } = {
+      Features: "features",
+      Pricing: "pricing",
+      Testimonials: "testimonials",
+    };
+
+    const targetId = sectionMap[link];
+    if (targetId) {
+      // If the link corresponds to an existing section, scroll to it
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      // Otherwise, redirect to /contact-form
+      router.push("/contact-form");
+    }
+  };
+
   return (
     <section className="flex flex-col gap-4 items-start self-stretch w-[296px] max-md:w-full">
       <header className="flex flex-col items-start self-stretch">
@@ -43,6 +71,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
             <div className="flex items-start">
               <a
                 href="#"
+                onClick={(e) => handleLinkClick(e, link)}
                 className="text-base leading-6 text-gray-400 hover:text-teal-400 transition-colors duration-200 max-sm:text-center"
               >
                 {link}
@@ -67,7 +96,7 @@ export const FooterLogo: React.FC = () => {
         "flex flex-col justify-center items-start self-stretch pl-4 max-sm:pl-3",
     },
     {
-      svgContent: `<svg id="I6:3181;1:140" data-component-name="Component 1" data-variant-name="variant=6" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="social-instagram" style="width: 20px; height: 20px; flex-shrink: 0"> <path d="M14.1667 1.66699H5.83341C3.53223 1.66699 1.66675 3.53247 1.66675 5.83366V14.167C1.66675 16.4682 3.53223 18.3337 5.83341 18.3337H14.1667C16.4679 18.3337 18.3334 16.4682 18.3334 14.167V5.83366C18.3334 3.53247 16.4679 1.66699 14.1667 1.66699Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M13.3333 9.47525C13.4361 10.1688 13.3176 10.8771 12.9947 11.4994C12.6718 12.1218 12.1609 12.6264 11.5346 12.9416C10.9083 13.2569 10.1986 13.3666 9.50641 13.2552C8.81419 13.1438 8.17472 12.817 7.67895 12.3212C7.18318 11.8255 6.85636 11.186 6.74497 10.4938C6.63359 9.80154 6.74331 9.09183 7.05852 8.46556C7.37374 7.8393 7.87841 7.32837 8.50074 7.00545C9.12307 6.68254 9.83138 6.56407 10.5249 6.66692C11.2324 6.77182 11.8873 7.10147 12.393 7.60717C12.8987 8.11288 13.2283 8.76782 13.3333 9.47525Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14.5833 5.41699H14.5916" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path> </svg>`,
+      svgContent: `<svg id="I6:3181;1:140" data-component-name="Component 1" data-variant-name="variant=6" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="social-instagram" style="width: 20px; height: 20px; flex-shrink: 0"> <path d="M14.1667 1.66699H5.83341C3.53223 1.66699 1.66675 3.53247 1.66675 5.83366V14.167C1.66675 16.4682 3.53223 18.3337 5.83341 18.3337H14.1667C16.4679 18.3337 18.3334 16.4682 18.3334 14.167V5.83366C18.3334 3.53247 16.4679 1.66699 14.1667 1.66699Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M13.3333 9.47525C13.4361 10.1688 13.3176 10.8771 12.9947 11.4994C12.6718 12.1218 12.1609 12.6264 11.5346 12.9416C10.9083 13.2569 10.1986 13.3666 9.50641 13.2552C8.81419 13.1438 8.17472 12.817 7.67895 12.3212C7.18318 11.8255 6.85636 11.186 6.74497 10.4938C6.63359 9.80154 6.74331 9.09183 7.05852 8.46556C7.37374 7.8393 7.87841 7.32837 8.50074 7.00545C9.12307 6.68254 9.83138 6.56407 10.5249 6.66692C11.2324 6.77182 11.8873 7.10147 12.393 7.60717C12.8987 8.11288 12.2283 8.76782 13.3333 9.47525Z" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14.5833 5.41699H14.5916" stroke="#9CA3AF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path> </svg>`,
       className:
         "flex flex-col justify-center items-start self-stretch pl-4 max-sm:pl-3",
     },

@@ -12,6 +12,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <article
+      id="testimonials"
       className="flex flex-col shrink-0 justify-center items-center pt-4 rounded-2xl shadow-sm h-[207px] w-[405px] max-md:w-[350px] max-sm:mx-auto max-sm:my-0 max-sm:w-full max-sm:max-w-[350px]"
       style={{
         background:
