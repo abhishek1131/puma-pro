@@ -37,7 +37,6 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
     e: React.MouseEvent<HTMLAnchorElement>,
     link: string
   ) => {
-    e.preventDefault();
     // Map links to their corresponding section IDs
     const sectionMap: { [key: string]: string } = {
       Features: "features",
@@ -47,15 +46,18 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
 
     const targetId = sectionMap[link];
     if (targetId) {
-      // If the link corresponds to an existing section, scroll to it
+      // Prevent default and apply smooth scrolling for section links
+      e.preventDefault();
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    } else {
-      // Otherwise, redirect to /contact-form
+    } else if (link === "Demo") {
+      // Redirect to /contact-form for Demo link
+      e.preventDefault();
       router.push("/contact-form");
     }
+    // Allow default navigation for other links (e.g., About Us, Contact, Privacy Policy)
   };
 
   return (
@@ -70,7 +72,15 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
           <div key={index} className="flex flex-col items-start self-stretch">
             <div className="flex items-start">
               <a
-                href="#"
+                href={
+                  link === "About Us"
+                    ? "/about-us"
+                    : link === "Contact"
+                    ? "/contact"
+                    : link === "Privacy Policy"
+                    ? "/privacy-policy"
+                    : "#"
+                }
                 onClick={(e) => handleLinkClick(e, link)}
                 className="text-base leading-6 text-gray-400 hover:text-teal-400 transition-colors duration-200 max-sm:text-center"
               >

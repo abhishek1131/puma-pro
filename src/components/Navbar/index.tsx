@@ -27,12 +27,16 @@ export const NavigationMenu: React.FC = () => {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    e.preventDefault();
-    const targetId = href.replace("#", "");
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    // Only prevent default and apply smooth scrolling for hash links
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
+    // Allow default navigation for non-hash links like "/about-us"
   };
 
   return (
