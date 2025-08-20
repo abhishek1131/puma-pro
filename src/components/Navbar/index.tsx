@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import { useRouter } from "next/navigation";
 interface LogoProps {
   className?: string;
 }
@@ -38,7 +38,7 @@ export const NavigationMenu: React.FC = () => {
     }
     // Allow default navigation for non-hash links like "/about-us"
   };
-
+const router = useRouter();
   return (
     <nav className="flex gap-3 items-center max-sm:hidden">
       <div className="flex gap-3 items-center max-md:gap-2">
@@ -59,7 +59,7 @@ export const NavigationMenu: React.FC = () => {
         <div className="flex gap-3 justify-center items-center h-10">
           <div className="flex gap-3 items-start h-10">
             <div className="flex flex-col items-end h-10">
-              <button className="group flex shrink-0 gap-2 justify-center items-center pt-2 pr-6 pb-2 pl-6 h-10 rounded-[50px] transition-all duration-300 ease-[ease] w-[160px] max-md:w-[180px] max-sm:px-5 max-sm:py-2 max-sm:h-12 max-sm:w-[160px] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden">
+              <button onClick={()=>router.push("/contact-form")} className="group flex shrink-0 gap-2 justify-center items-center pt-2 pr-6 pb-2 pl-6 h-10 rounded-[50px] transition-all duration-300 ease-[ease] w-[160px] max-md:w-[180px] max-sm:px-5 max-sm:py-2 max-sm:h-12 max-sm:w-[160px] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden">
                 <div className="relative transition-all duration-[0.3s] ease-[ease] group-hover:absolute group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:scale-110">
                   <svg
                     width="12"

@@ -1,5 +1,6 @@
+"use client";
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 interface FeatureIconProps {
   type:
     | "integration"
@@ -414,6 +415,7 @@ const WhyChooseSection = ({ className = "" }) => {
 };
 
  const Features = () => {
+  const router=useRouter()
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-[#EBEFF2] py-10 px-4">
       <div className="flex flex-col items-center gap-10 w-full max-w-6xl">
@@ -428,7 +430,7 @@ const WhyChooseSection = ({ className = "" }) => {
           <FeatureCards />
         </div>
         <div className="flex flex-col items-center h-14 w-[249px] max-sm:w-full">
-        <button
+        <button onClick={()=>router.push("/contact-form")}
       className="group relative flex justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-14 rounded-[100px] w-[210px] max-sm:w-full max-sm:max-w-[300px] transition-all duration-300 ease-[ease] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden"
     >
       {/* Text */}

@@ -1,8 +1,10 @@
+"use client"
 import Footer from "@/components/footer";
 import { Navigation } from "@/components/Navbar";
 import React from "react";
-
+import { useRouter } from "next/navigation";
 export function TeamSection() {
+
   return (
     <>
       <link
@@ -229,7 +231,7 @@ const LegacyValuesSection: React.FC<LegacyValuesSectionProps> = ({
       console.log("Book a demo clicked");
     }
   };
-
+  const router = useRouter();
   return (
     <div
       className="flex flex-col gap-12 justify-center items-start px-4 py-24 mx-auto my-0 w-full max-w-screen-xl max-[1440px]:max-w-screen-lg max-[1440px]:px-3 max-[1024px]:max-w-screen-md max-[1024px]:gap-8 max-sm:gap-6 max-sm:px-2 max-sm:max-w-full"
@@ -275,7 +277,7 @@ const LegacyValuesSection: React.FC<LegacyValuesSectionProps> = ({
         </div>
       </div>
       <div className="flex flex-col items-center h-16 max-sm:items-start">
-        <button
+        <button onClick={()=>router.push("/contact-form")}
           className="flex shrink-0 gap-3 justify-center items-center rounded-[50px] transition-all cursor-pointer duration-[0.3s] ease-[ease] max-[1024px]:px-7 max-[1024px]:py-2 max-[1024px]:h-14 max-[1024px]:w-[220px] max-sm:gap-2 max-sm:px-6 max-sm:py-1.5 max-sm:h-12 max-sm:w-[200px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           style={{
             width: "249px",

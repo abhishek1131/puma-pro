@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-
+import { useRouter } from "next/navigation";
 interface HeroBadgeProps {
   text: string;
 }
@@ -102,11 +102,12 @@ export const HeroDescription: React.FC = () => {
 };
 
 export const DemoButton: React.FC = () => {
+  const router = useRouter();
   return (
     <div className="flex gap-4 justify-center items-center h-16">
       <div className="flex gap-4 items-start h-16">
         <div className="flex flex-col items-end h-16">
-          <button
+          <button onClick={()=>router.push("/contact-form")}
             className="group relative flex shrink-0 gap-3 justify-center items-center pt-2.5 pr-8 pb-2.5 pl-8 h-16 rounded-[50px] w-[249px] max-md:w-[220px] max-sm:px-6 max-sm:py-2 max-sm:h-14 max-sm:w-[200px]
               overflow-hidden bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)]
               transition-all duration-300 ease-linear"
