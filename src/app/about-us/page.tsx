@@ -81,16 +81,22 @@ export function TeamSection() {
                   </svg>
                 </div>
                 <div
-                  className="self-stretch text-black text-opacity-60"
+                  className="text-black text-opacity-60 "
                   style={{
                     fontFamily: "Inter",
                     fontWeight: 400,
                     fontStyle: "normal",
                     fontSize: "16px",
                     lineHeight: "20px",
-                    letterSpacing: "0%",
                     color: "#00000099",
                     textAlign: "justify",
+                    textAlignLast: "left",     // don't justify last line
+                    hyphens: "auto",           // modern hyphenation
+                    WebkitHyphens: "auto",     // Safari
+                    msHyphens: "auto",         // old Edge/IE
+                    overflowWrap: "anywhere",  // allow breaks instead of huge gaps
+                    wordBreak: "normal",
+                    letterSpacing: "normal",
                   }}
                 >
                   {`With many years of experience in property investment, property management, and technology, I know firsthand the challenges property managers face. That’s why we built Puma Pro—to give you greater control, powerful automation, and the freedom to grow your business, your way.`}
@@ -127,7 +133,7 @@ export function TeamSection() {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     </>
   );
 }
@@ -277,7 +283,7 @@ const LegacyValuesSection: React.FC<LegacyValuesSectionProps> = ({
         </div>
       </div>
       <div className="flex flex-col items-center h-16 max-sm:items-start">
-        <button onClick={()=>router.push("/contact-form")}
+        <button onClick={() => router.push("/contact-form")}
           className="flex shrink-0 gap-3 justify-center items-center rounded-[50px] transition-all cursor-pointer duration-[0.3s] ease-[ease] max-[1024px]:px-7 max-[1024px]:py-2 max-[1024px]:h-14 max-[1024px]:w-[220px] max-sm:gap-2 max-sm:px-6 max-sm:py-1.5 max-sm:h-12 max-sm:w-[200px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           style={{
             width: "249px",

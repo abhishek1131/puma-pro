@@ -1,17 +1,21 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+
 interface LogoProps {
   className?: string;
 }
 
 export const Logo: React.FC<LogoProps> = ({ className = "" }) => {
   return (
-    <img
-      src="/header/mainlogo.png"
-      alt="Puma Pro"
-      className={`flex shrink-0 justify-center items-center h-[87px] w-[136px] max-sm:h-[76px] max-sm:w-[120px] ${className}`}
-    />
+    <Link href="/">
+      <img 
+        src="/header/mainlogo.png"
+        alt="Puma Pro"
+        className={`flex shrink-0 justify-center items-center h-[87px] w-[136px] max-sm:h-[76px] max-sm:w-[120px] ${className}`}
+      />
+    </Link>
   );
 };
 
@@ -23,11 +27,11 @@ const menuItems = [
 ];
 
 export const NavigationMenu: React.FC = () => {
+  const router = useRouter();
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    // Only prevent default and apply smooth scrolling for hash links
     if (href.startsWith("#")) {
       e.preventDefault();
       const targetId = href.replace("#", "");
@@ -36,9 +40,8 @@ export const NavigationMenu: React.FC = () => {
         targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
-    // Allow default navigation for non-hash links like "/about-us"
   };
-const router = useRouter();
+
   return (
     <nav className="flex gap-3 items-center max-sm:hidden">
       <div className="flex gap-3 items-center max-md:gap-2">
@@ -59,7 +62,10 @@ const router = useRouter();
         <div className="flex gap-3 justify-center items-center h-10">
           <div className="flex gap-3 items-start h-10">
             <div className="flex flex-col items-end h-10">
-              <button onClick={()=>router.push("/contact-form")} className="group flex shrink-0 gap-2 justify-center items-center pt-2 pr-6 pb-2 pl-6 h-10 rounded-[50px] transition-all duration-300 ease-[ease] w-[160px] max-md:w-[180px] max-sm:px-5 max-sm:py-2 max-sm:h-12 max-sm:w-[160px] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden">
+              <button
+                onClick={() => router.push("/contact-form")}
+                className="group flex shrink-0 gap-2 justify-center items-center pt-2 pr-6 pb-2 pl-6 h-10 rounded-[50px] transition-all duration-300 ease-[ease] w-[160px] max-md:w-[180px] max-sm:px-5 max-sm:py-2 max-sm:h-12 max-sm:w-[160px] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden"
+              >
                 <div className="relative transition-all duration-[0.3s] ease-[ease] group-hover:absolute group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:scale-110">
                   <svg
                     width="12"
@@ -136,13 +142,14 @@ export const Navigation: React.FC = () => {
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
         rel="stylesheet"
       />
-      <header className="flex flex-col shrink-0 justify-center items-center px-12 py-4 w-full h-24 bg-white shadow-sm max-md:px-8 max-md:py-4 max-sm:px-5 max-sm:py-4 max-sm:h-20">
+      <header className="flex flex-col shrink-0 justify-center items-center px-12 py-4 w-full h-24 bg-white shadow-sm max-md:px-8 max-md:py-4 max-sm:px-5 max-sm:py-4 max-sm:h-20 fixed top-0 left-0 z-50">
         <div className="flex relative justify-between items-center w-full max-w-[1410px] max-md:gap-5 max-sm:justify-between">
           <Logo />
           <NavigationMenu />
           <MobileMenuToggle />
         </div>
       </header>
+      <div className="h-24 max-sm:h-20"></div>
     </>
   );
 };
