@@ -112,65 +112,73 @@ const testimonials = [
 
 export const TestimonialsSection: React.FC = () => {
   return (
-    <section className="box-border flex flex-col items-center px-12 py-20 w-full bg-gray-100 min-h-[560px] max-md:px-6 max-md:py-16 max-sm:px-4 max-sm:py-10">
-      <div className="relative mx-auto w-full max-w-screen-xl h-[400px] max-md:max-w-[991px] max-sm:max-w-screen-sm">
-        <header className="flex absolute top-0 left-0 flex-col items-center w-full h-10">
-          <h2
-            className="m-0 text-4xl font-bold leading-10 text-center text-gray-800 max-md:text-3xl max-md:leading-9 max-sm:text-2xl max-sm:leading-7"
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 700,
-              fontStyle: "normal",
-              fontSize: "40px",
-              lineHeight: "40px",
-              letterSpacing: "0%",
-              textAlign: "center",
-              verticalAlign: "middle",
-            }}
-          >
-            Trusted by Industry Professionals
-          </h2>
-        </header>
+   <section className="box-border flex flex-col items-center px-12 py-20 w-full bg-gray-100 min-h-[560px] max-md:px-6 max-md:py-16 max-sm:px-4 max-sm:py-10">
+  <div className="relative mx-auto w-full max-w-screen-xl h-[400px] max-md:max-w-[991px] max-sm:max-w-screen-sm">
+    <header className="flex absolute top-0 left-0 flex-col items-center w-full h-10">
+      <h2
+        className="m-0 text-4xl font-bold leading-10 text-center text-gray-800 max-md:text-3xl max-md:leading-9 max-sm:text-2xl max-sm:leading-7"
+        style={{
+          fontFamily: "Inter, sans-serif",
+          fontWeight: 700,
+          fontStyle: "normal",
+          fontSize: "40px",
+          lineHeight: "40px",
+          letterSpacing: "0%",
+          textAlign: "center",
+          verticalAlign: "middle",
+        }}
+      >
+        Trusted by Industry Professionals
+      </h2>
+    </header>
 
-        <div className="overflow-hidden absolute left-3 h-[207px] top-[97px] w-[calc(100%_-_24px)] max-md:left-0 max-md:w-full max-sm:overflow-visible max-sm:static max-sm:w-full max-sm:h-auto">
-          <div
-            className="flex gap-5 items-center h-[207px] w-fit max-sm:flex-col max-sm:gap-4 max-sm:w-full max-sm:h-auto animate-slide"
-            style={{
-              animation: "slide 20s linear infinite",
-            }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={index}
-                quote={testimonial.quote}
-                attribution={testimonial.attribution}
-              />
-            ))}
-            {/* Duplicate testimonials for seamless looping */}
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={`duplicate-${index}`}
-                quote={testimonial.quote}
-                attribution={testimonial.attribution}
-              />
-            ))}
-          </div>
-        </div>
-
-        <NavigationDots />
+    <div className="overflow-hidden absolute left-3 h-[207px] top-[97px] w-[calc(100%_-_24px)] max-md:left-0 max-md:w-full max-sm:static max-sm:mt-40 max-sm:overflow-x-auto max-sm:h-[207px] max-sm:top-0">
+      <div
+        className="flex gap-5 items-center h-[207px] w-fit max-sm:flex-row max-sm:gap-4 max-sm:w-full max-sm:h-[207px] animate-slide"
+        style={{
+          animation: "slide 20s linear infinite",
+        }}
+      >
+        {testimonials.map((testimonial, index) => (
+          <TestimonialCard
+            key={index}
+            quote={testimonial.quote}
+            attribution={testimonial.attribution}
+          />
+        ))}
+        {/* Duplicate testimonials for seamless looping */}
+        {testimonials.map((testimonial, index) => (
+          <TestimonialCard
+            key={`duplicate-${index}`}
+            quote={testimonial.quote}
+            attribution={testimonial.attribution}
+          />
+        ))}
       </div>
+    </div>
+<div className="max-sm:mt-15" >
+<NavigationDots />
+</div>
+    
+  </div>
 
-      <style jsx>{`
-        @keyframes slide {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
-    </section>
+  <style jsx>{`
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .max-sm\:overflow-x-auto {
+      scroll-snap-type: x mandatory;
+    }
+    .TestimonialCard {
+      scroll-snap-align: start;
+    }
+  `}</style>
+</section>
   );
 };
 

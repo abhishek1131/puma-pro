@@ -11,9 +11,9 @@ export const Logo: React.FC<LogoProps> = ({ className = "" }) => {
   return (
     <Link href="/">
       <img
-        src="/header/mainlogo.png"
+        src="/header/Puma Pro Main Logo.png"
         alt="Puma Pro"
-        className={`flex shrink-0 justify-center items-center h-[87px] w-[136px] max-sm:h-[76px] max-sm:w-[120px] ${className}`}
+        className={`flex shrink-0 justify-center items-center h-[140px] w-auto max-sm:h-[110px] max-sm:w-auto px-4 ${className}`}
       />
     </Link>
   );

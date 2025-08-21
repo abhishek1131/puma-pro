@@ -78,7 +78,7 @@ export function SectionContent({
 }
 
 export function Section() {
-  const title = "We Know Your Business Because We're in It Too";
+  const title = "We Know Your Business Because We're in It too";
 
   const paragraphs = [
     "Puma Pro is a next-generation platform created by industry insiders with over 20 years in property management and MLR, 20+ years in tech, and a team that's actively investing in short-term rentals.",
