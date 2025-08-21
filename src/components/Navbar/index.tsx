@@ -10,7 +10,7 @@ interface LogoProps {
 export const Logo: React.FC<LogoProps> = ({ className = "" }) => {
   return (
     <Link href="/">
-      <img 
+      <img
         src="/header/mainlogo.png"
         alt="Puma Pro"
         className={`flex shrink-0 justify-center items-center h-[87px] w-[136px] max-sm:h-[76px] max-sm:w-[120px] ${className}`}
@@ -28,6 +28,19 @@ const menuItems = [
 
 export const NavigationMenu: React.FC = () => {
   const router = useRouter();
+  // const handleNavClick = (
+  //   e: React.MouseEvent<HTMLAnchorElement>,
+  //   href: string
+  // ) => {
+  //   if (href.startsWith("#")) {
+  //     e.preventDefault();
+  //     const targetId = href.replace("#", "");
+  //     const targetElement = document.getElementById(targetId);
+  //     if (targetElement) {
+  //       targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+  //     }
+  //   }
+  // };
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
@@ -37,10 +50,46 @@ export const NavigationMenu: React.FC = () => {
       const targetId = href.replace("#", "");
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        let headerOffset = 96; // navbar height (h-24)
+
+        // Add extra spacing just for testimonials
+        if (targetId === "testimonials") {
+          headerOffset += 120; // ⬅️ now 120px extra instead of 60px
+        }
+
+        const elementPosition =
+          targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
       }
     }
   };
+
+  //   const handleNavClick = (
+  //   e: React.MouseEvent<HTMLAnchorElement>,
+  //   href: string
+  // ) => {
+  //   if (href.startsWith("#")) {
+  //     e.preventDefault();
+  //     const targetId = href.replace("#", "");
+  //     const targetElement = document.getElementById(targetId);
+  //     if (targetElement) {
+  //       const headerOffset = 96; // navbar height (24 * 4 = 96px for h-24)
+  //       const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+  //       const offsetPosition = elementPosition - headerOffset;
+
+  //       window.scrollTo({
+  //         top: offsetPosition,
+  //         behavior: "smooth",
+  //       });
+  //     }
+  //   }
+  // };
+
 
   return (
     <nav className="flex gap-3 items-center max-sm:hidden">
@@ -64,7 +113,7 @@ export const NavigationMenu: React.FC = () => {
             <div className="flex flex-col items-end h-10">
               <button
                 onClick={() => router.push("/contact-form")}
-                className="group flex shrink-0 gap-2 justify-center items-center pt-2 pr-6 pb-2 pl-6 h-10 rounded-[50px] transition-all duration-300 ease-[ease] w-[160px] max-md:w-[180px] max-sm:px-5 max-sm:py-2 max-sm:h-12 max-sm:w-[160px] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden"
+                className="group flex shrink-0 gap-2 justify-center items-center pt-2 pr-6 pb-2 pl-4 h-10 rounded-[50px] transition-all duration-300 ease-[ease] w-[160px] max-md:w-[180px] max-sm:px-4 max-sm:py-2 max-sm:h-12 max-sm:w-[160px] bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden"
               >
                 <div className="relative transition-all duration-[0.3s] ease-[ease] group-hover:absolute group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:scale-110">
                   <svg
