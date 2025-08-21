@@ -167,8 +167,8 @@ export function ContentSection() {
 function GlobalReachSection() {
   return (
     <div className="flex flex-col items-center">
-      <section className="flex flex-col justify-center items-center px-4 py-8 w-full bg-gray-50 rounded-2xl max-md:px-3 max-md:py-6 max-sm:max-w-full">
-        <div className="flex flex-wrap gap-6 justify-center items-start w-full max-w-screen-xl">
+      <section className="flex flex-col justify-center items-center px-8 py-12 w-full bg-gray-50 rounded-2xl max-md:px-5 max-md:max-w-full">
+       <div className="flex flex-wrap gap-6 justify-center items-start w-full max-w-screen-xl md:gap-10 md:w-[1122px] md:max-w-full">
           <ContentSection />
           <ImageSection />
         </div>

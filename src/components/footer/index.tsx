@@ -37,7 +37,6 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
     e: React.MouseEvent<HTMLAnchorElement>,
     link: string
   ) => {
-    // Map links to their corresponding section IDs
     const sectionMap: { [key: string]: string } = {
       Features: "features",
       Pricing: "pricing",
@@ -46,18 +45,23 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
 
     const targetId = sectionMap[link];
     if (targetId) {
-      // Prevent default and apply smooth scrolling for section links
       e.preventDefault();
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
+        // Scroll to the top of the element with a smooth behavior
         targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        // Adjust for fixed header with a manual offset, increase for Testimonials
+        const headerOffset = link === "Testimonials" ? 120 : 80; // Larger offset for Testimonials
+        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - headerOffset,
+          behavior: "smooth",
+        });
       }
     } else if (link === "Demo") {
-      // Redirect to /contact-form for Demo link
       e.preventDefault();
       router.push("/contact-form");
     }
-    // Allow default navigation for other links (e.g., About Us, Contact, Privacy Policy)
   };
 
   return (
@@ -76,10 +80,10 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
                   link === "About Us"
                     ? "/about-us"
                     : link === "Contact"
-                    ? "/contact-form"
-                    : link === "Privacy Policy"
-                    ? "/privacy-policy"
-                    : "#"
+                      ? "/contact-form"
+                      : link === "Privacy Policy"
+                        ? "/privacy-policy"
+                        : "#"
                 }
                 onClick={(e) => handleLinkClick(e, link)}
                 className="text-base leading-6 text-gray-400 hover:text-teal-400 transition-colors duration-200 max-sm:text-center"
