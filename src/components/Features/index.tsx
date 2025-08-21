@@ -3,13 +3,13 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 interface FeatureIconProps {
   type:
-    | "integration"
-    | "security"
-    | "scaling"
-    | "support"
-    | "fees"
-    | "partnership"
-    | "automation";
+  | "integration"
+  | "security"
+  | "scaling"
+  | "support"
+  | "fees"
+  | "partnership"
+  | "automation";
 }
 
 export const FeatureIcon: React.FC<FeatureIconProps> = ({ type }) => {
@@ -213,14 +213,14 @@ const FeatureCard = ({ img, hoveredImg, title, description }) => {
 
       {/* Icon */}
       <div className="flex absolute top-0 left-[140px] max-md:left-[123px] max-sm:left-[103px] h-[74px] w-[74px] justify-center items-center p-2.5 bg-white rounded-2xl shadow-lg  transition-all duration-300 group-hover:bg-[linear-gradient(138.49deg,#00D8B2_5.39%,#0075C3_100%)] group-hover:border-[#00D8B2] group-hover:scale-110">
-        <img 
-          src={img} 
-          alt={title} 
+        <img
+          src={img}
+          alt={title}
           className="w-[54px] h-[55px] group-hover:hidden"
         />
-        <img 
-          src={hoveredImg} 
-          alt={`${title} hovered`} 
+        <img
+          src={hoveredImg}
+          alt={`${title} hovered`}
           className="w-[54px] h-[55px] hidden group-hover:block"
         />
       </div>
@@ -280,7 +280,7 @@ const FeatureCards = () => {
         "Real people, real help whenever you need it.",
     },
   ];
-  
+
 
   return (
     <>
@@ -414,8 +414,8 @@ const WhyChooseSection = ({ className = "" }) => {
   );
 };
 
- const Features = () => {
-  const router=useRouter()
+const Features = () => {
+  const router = useRouter()
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-[#EBEFF2] py-10 px-4">
       <div className="flex flex-col items-center gap-10 w-full max-w-6xl">
@@ -426,7 +426,7 @@ const WhyChooseSection = ({ className = "" }) => {
           the right direction all backed by a team that’s as invested in your
           success as you are.
         </p>
-        <div className="flex flex-col items-center gap-8 w-full">
+        <div className="flex flex-col items-center gap-8 w-full px-4 sm:px-0">
           <FeatureCards />
         </div>
         <div className="flex flex-col items-center h-14 w-[249px] max-sm:w-full">
