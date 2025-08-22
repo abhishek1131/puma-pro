@@ -73,7 +73,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
       </header>
       <nav className="flex flex-col gap-2 items-start self-stretch max-sm:items-center">
         {links.map((link, index) => (
-          <div key={index} className="flex flex-col items-start self-stretch">
+         <div key={index} className="flex flex-col items-center md:items-start self-stretch">
             <div className="flex items-start">
               <a
                 href={

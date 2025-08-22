@@ -180,7 +180,7 @@ export const MobileMenu: React.FC<{ isMenuOpen: boolean; toggleMenu: () => void 
 }) => {
   const router = useRouter();
 
-  const handleNavClick = (
+const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
@@ -191,7 +191,7 @@ export const MobileMenu: React.FC<{ isMenuOpen: boolean; toggleMenu: () => void 
       if (targetElement) {
         let headerOffset = 96; // navbar height (h-24)
         if (targetId === "testimonials") {
-          headerOffset += 120;
+          headerOffset += 200; // Increased from 120 to 200 to add more space
         }
         const elementPosition =
           targetElement.getBoundingClientRect().top + window.scrollY;
@@ -264,7 +264,7 @@ export const MobileMenu: React.FC<{ isMenuOpen: boolean; toggleMenu: () => void 
         </button>
         <a
           href="https://my.pumapro.com.au"
-          className="group flex shrink-0 gap-2 justify-center items-center pt-2 pr-6 pb-2 pl-6 h-12 rounded-[50px] my-2 bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden"
+         className="group flex shrink-0 gap-2 justify-center items-center pt-2 pr-6 pb-2 pl-6 h-12 rounded-[50px] my-2 bg-gradient-to-r from-[#00D8B2] to-[#0075C3] hover:!bg-white hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] relative overflow-hidden max-sm:w-[160px] max-sm:px-4 max-sm:py-2"
           onClick={toggleMenu}
         >
           <span className="text-base font-semibold leading-5 text-center text-white">
