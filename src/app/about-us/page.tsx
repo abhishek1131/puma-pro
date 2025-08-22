@@ -54,7 +54,7 @@ export function TeamSection() {
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/8d10b6ec64621ab8055c31c9513ba19f514e9224?width=1297"
                 alt="Team image"
-                className="object-cover absolute left-0 top-[-18px] shrink-0 border-2 border-solid border-orange-100 border-opacity-60 h-[432px] w-full max-w-[649px] max-[1024px]:static max-[1024px]:top-0 max-[1024px]:left-0 max-[1024px]:w-full max-[1024px]:h-[300px] max-sm:h-[200px]"
+                className="object-cover absolute left-0 top-[-18px] shrink-0 border-2 border-solid border-orange-100 border-opacity-60 h-[432px] w-full max-w-[649px] max-[1024px]:static max-[1024px]:top-0 max-[1024px]:left-0 max-[1024px]:w-full max-[1024px]:h-[300px] "
                 loading="lazy"
               />
             </div>
