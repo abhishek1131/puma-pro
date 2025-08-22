@@ -1,4 +1,5 @@
 // pages/terms-and-policies.js (or app/terms-and-policies/page.js for App Router)
+import Footer from "@/components/footer";
 import { Navigation } from "@/components/Navbar";
 import Head from "next/head";
 
@@ -469,6 +470,7 @@ export default function TermsAndPolicies() {
           </section>
         </div>
       </div>
+        <Footer />
     </>
   );
 }

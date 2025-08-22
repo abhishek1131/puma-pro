@@ -15,6 +15,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Navigation } from "@/components/Navbar";
+import Footer from "@/components/footer";
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -352,6 +354,7 @@ function ContactForm() {
 export const Page = () => {
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      <Navigation />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
@@ -366,6 +369,7 @@ export const Page = () => {
           <ContactForm />
         </div>
       </div>
+      <Footer />
     </main>
   );
 };
