@@ -102,21 +102,21 @@ export function GetStartedButton() {
 export function WhyPumaProSection() {
   const features = [
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/5617568bd1c620779a5b8c4c95185c01442a083f?width=400",
+      image: "./whyPumaProIsDifferent/industry-expert.png",
       altText: "Industry experts illustration",
       title: "Built by Industry Experts",
       description:
         "Developed by a team with over 20 years of experience in proptech, property management, and investing in short-stay rentals. We know the industry inside out and we use Puma Pro ourselves to manage our own properties.",
     },
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/5c4d4493f9c77c882374cdb51854d382f4a5ebda?width=400",
+      image: "./whyPumaProIsDifferent/no-subs.png",
       altText: "No subscriptions illustration",
       title: "No Subscriptions",
       description:
         "No monthly fees. No subscriptions. No hidden costs. Absolutely free for managers and property owners. With Puma Pro, you only pay when you get bookings—and you can include the booking fee in your guest's accommodation charge at the point of sale, so you pay nothing out of the pocket. If your rooms aren't occupied, you don't pay a thing. Prefer a flat monthly rate? We're flexible to fit your business.",
     },
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/152b376d1b67be7c9e4ff0ad5aaab4d83b75d63a?width=400",
+      image: "./whyPumaProIsDifferent/smart-tools.png",
       altText: "Smart tools illustration",
       title: "Smart Tools, Simple Experience",
       description:

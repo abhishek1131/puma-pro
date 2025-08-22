@@ -17,9 +17,6 @@ export default function Home() {
     <div className="overflow-hidden">
       <Navigation />
       <HeroSection />
-      {/* <div className="border border-yellow-500">
-        <InputDesign />
-      </div> */}
       <LogoCarousel />
       <Features></Features>
       <ChallengesSection />

@@ -93,7 +93,7 @@ export function Section() {
          <SectionHeader title={title} />
         <SectionContent
           paragraphs={paragraphs}
-          imageSrc="https://api.builder.io/api/v1/image/assets/TEMP/caff20b6281b3a7e005b8bd306e243f10c6072b1?width=1052"
+          imageSrc="./business-img.png"
           imageAlt=""
         />
        
